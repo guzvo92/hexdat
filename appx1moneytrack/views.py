@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
 
-#[VIEWS / appmain0core]
+#[VIEWS / appx1moneytrack]
 
 from django.shortcuts import render
 from django.shortcuts import render, HttpResponse, redirect
 # Create your views here.
 
-def index(request): return render(request,'_index.html')
+def index_moneytrack(request): return render(request,'index_moneytrack.html')

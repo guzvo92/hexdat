@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'appmain0core'
+    'appmain0core',
+    'appx1moneytrack',
 ]
 
 MIDDLEWARE = [
