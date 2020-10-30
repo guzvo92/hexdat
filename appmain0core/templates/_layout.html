@@ -1,0 +1,42 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  	<!--utf es para las comillas y las ñ-->
+    <meta charset="utf-8">
+
+    	{% include 'C0_staticimports.html' %}
+      <!--no olvidar que con boostrap hay que usar siempre con-fluid/row -->
+      <!-- aunque embebas varias veces la estructura-->
+
+  		{% block import %}  {% endblock %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="{%static 'img/devsyscon.png' %}" />
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+
+    <title>
+    	{% block title %} {% endblock %}
+    </title>
+  </head>
+
+  <body>
+	{% include 'C1_navbar.html' %}
+
+	<div class="e63"></div>
+
+
+		{% block content %} {% endblock %}
+
+
+	<hr/>
+  </body>
+
+  	<footer>
+  		{% include 'C2_footer.html' %}
+  	</footer>
+
+  	{% block importscript %}  {% endblock %}
+</html>
