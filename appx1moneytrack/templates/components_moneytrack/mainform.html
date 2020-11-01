@@ -2,20 +2,33 @@
   .input20{width:100px}
   .input30{width:200px}
   .btn{margin-top:-5px;}
+  .ey30{height:30px; background-color:red}
 </style>
 
 
 <section>
-  <div class="container">
-    <div class="row">
+    <div class="container">
+        <div class="row">
 
-      <form class="formoney" action="{%url 'saveformoneyreg'%}" method="POST">
-        {% csrf_token %}
-        <input class="input20" name="newreg_quantity" placeholder="Cantidad: "> </input>
-        <input class="input30" name="newreg_concept" placeholder="Concepto: "> </input>
-        <button class="btn btn-outline-info btn-sm" type="submit" name="button">Agregar</button>
-      </form>
+            <form class="formoney" action="{%url 'saveformoneyreg'%}" method="POST">
+                {% csrf_token %}
+                <input class="input20" name="newreg_quantity" placeholder="Cantidad: "> </input>
+                <input class="input30" name="newreg_concept" placeholder="Concepto: "> </input>
 
+                <select style="width:200px" name="newreg_categoryselect">
+                    {% for val in categoryx %}
+                    <option value="{{val}}">{{val}}</option>
+                    {% endfor %}
+                </select>
+
+                <button class="btn btn-outline-info btn-sm" type="submit" name="button">Agregar</button>
+            </form>
+        </div> <!---end row-->
+
+        <div class="e30"></div>
+
+        <div class="row">
+            <span> {{pruebasx}}</span>
+        </div> <!---end row-->
     </div>
-  </div>
 </section>

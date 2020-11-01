@@ -1,4 +1,3 @@
-
 #[ URLS / appx1moneytrack]
 
 from django.contrib import admin
