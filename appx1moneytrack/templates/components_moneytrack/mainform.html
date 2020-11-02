@@ -1,17 +1,8 @@
 <style media="screen">
 
     @media (max-width:640px) {
-        th,td
 
-    {
-        font-size: 9px;
-        padding: 7px !important;
-    }
-
-    .thcharname {
-        width: 10px
-    }
-
+        th,td {font-size: 9px; padding: 6px !important;}
     }
 
     @media (min-width: 641px) and (max-width:830px) {
@@ -20,10 +11,7 @@
             padding: 7px;
             !important;
         }
-
-        .thcharname {
-            width: 10px
-        }
+       
     }
 
     @media (min-width:831px) and (max-width:950px) {
@@ -44,17 +32,12 @@
         }
     }
 
-    .btn {
-        margin-top: -5px
-    }
 
-    .input30 {
-        width: 90px
-    }
-
-  .input20{width:100px}
-  .input30{width:200px}
-  .btn{margin-top:-5px;}
+  .input30{width:180px; margin-bottom:20px}
+  .btn{width:120px}
+  .catselector {height:31px}
+  .center{margin-left:auto; margin-right:auto}
+  .boxinputs{}
  
 
 
@@ -62,28 +45,26 @@
 
 
 <section>
-    <div class="container">
-        <div class="row">
+    <form class="formoney" action="{%url 'saveformoneyreg'%}" method="POST">
 
-            <form class="formoney" action="{%url 'saveformoneyreg'%}" method="POST">
-                {% csrf_token %}
-                <input class="input20" name="newreg_quantity" placeholder="Cantidad: "> </input>
-                <input class="input30" name="newreg_concept" placeholder="Concepto: "> </input>
-
-                <select style="width:200px" name="newreg_categoryselect">
+        <div class="container boxinputs center">
+            <div class="row"> <input class="center input30" name="newreg_quantity" placeholder="Cantidad: "> </input> </div>
+            
+            <div class="row"> <input class="center input30" name="newreg_concept" placeholder="Concepto: "> </input> </div>
+            
+            <div class="row">
+                <select class="center itemsupform input30" name="newreg_categoryselect">
                     {% for val in categoryx %}
                     <option value="{{val}}">{{val}}</option>
                     {% endfor %}
                 </select>
+            </div>
+            
+            <div class="row"> <button class="center btn btn-outline-info btn-sm" type="submit" name="button">Agregar</button></div>
+            
+            <div class="row"></div>
 
-                <button class="btn btn-outline-info btn-sm" type="submit" name="button">Agregar</button>
-            </form>
-        </div> <!---end row-->
+        </div>
 
-        <div class="e30"></div>
-
-        <div class="row">
-            <span> {{pruebasx}}</span>
-        </div> <!---end row-->
-    </div>
+    </form>
 </section>

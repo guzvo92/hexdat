@@ -15,13 +15,29 @@
 <!-------------------------------------------------------------------->
 {% block content %}
 
-  <div class="e30"></div>
+<div class="e30"></div>
 
-  {% include 'components_moneytrack/mainform.html' %}
+<div class="container-fluid">
 
-  <div class="e30"></div>
+    <div class="row">
 
-  {% include 'components_moneytrack/mainrender.html' %}
+        <div class="col-md-1"></div>
+        
+        <div class="col-md-10 col-12">
+
+            {% include 'components_moneytrack/mainform.html' %}
+
+            <div class="e30"></div>
+
+            {% include 'components_moneytrack/mainrender.html' %}
+
+        </div>
+        
+        <div class="col-md-1"></div>
+
+
+    </div>
+</div> 
 
 {% endblock %}
 <!-------------------------------------------------------------------->
