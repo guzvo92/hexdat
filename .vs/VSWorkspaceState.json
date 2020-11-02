@@ -1,10 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\appmain0core",
+    "\\appmain0core\\static",
+    "\\appmain0core\\templates",
     "\\appx1moneytrack",
     "\\appx1moneytrack\\templates",
     "\\appx1moneytrack\\templates\\components_moneytrack"
   ],
-  "SelectedNode": "\\appx1moneytrack\\models.py",
+  "SelectedNode": "\\appx1moneytrack\\templates\\components_moneytrack\\mainrender.html",
   "PreviewInSolutionExplorer": false
 }

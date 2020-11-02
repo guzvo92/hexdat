@@ -1,10 +1,31 @@
+<style>
+    @media (max-width:640px) {
+        th,td {font-size: 9px; padding: 6px !important;}
+    }
 
+    @media (min-width: 641px) and (max-width:830px) {
+        th, td {font-size: 9px; padding: 7px!important;}      
+    }
+
+    @media (min-width:831px) and (max-width:950px) {
+        th, td {font-size: 18px}
+    }
+
+    @media (min-width:951px) and (max-width:1228px) {
+        th, td {font-size: 18px}
+    }
+
+    @media (min-width:1229px) and (max-width:1399px) {
+        th, td {font-size: 18px}
+    }
+
+</style>
 <section>
   <div class="container">
     <div class="row">
 
 
-        <table class="rounded table table-striped table-light">
+        <table class="rounded table table-striped text-center table-hover-info">
 
             <thead class="thead-dark">
                 <tr>
@@ -17,16 +38,16 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody class="table-default">
 
               {% for registro in registroslistx %}
 
                 <tr>
                     <td>{{registro.id}}</td>
-                    <td class="text-center">{{registro.quantity}}</td>
-                    <td class="text-center">{{registro.concept}}</td>
-                    <td class="text-center">{{registro.category}}</td>
-                    <td class="text-center">{{registro.created_at}}</td>
+                    <td>{{registro.quantity}}</td>
+                    <td>{{registro.concept}}</td>
+                    <td>{{registro.category}}</td>
+                    <td>{{registro.created_at}}</td>
                     <td><a href="{% url 'clearformreg' idx=registro.id %}">Eliminar</a></td>
                 </tr>
 

@@ -2,7 +2,8 @@
 
 from django.shortcuts import render
 from django.shortcuts import render, HttpResponse, redirect
-from .models import Registrogasto
+from .models import *
+from .services import *
 
 
 def index_moneytrack(request):
@@ -14,10 +15,12 @@ def index_moneytrack(request):
 	('pagos servicios'),
 	('pagos extras')
 	)
+	
+	datostotales = totalgastos()
 
 	return render(
 		request,'index_moneytrack.html',
-		{'registroslistx':registroslist, 'pruebasx':pruebas, 'categoryx':category}
+		{'registroslistx':registroslist, 'pruebasx':pruebas, 'categoryx':category, 'datostotalesx':datostotales}
 	)
 
 

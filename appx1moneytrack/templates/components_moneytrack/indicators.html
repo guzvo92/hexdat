@@ -1,0 +1,53 @@
+<style media="screen">
+
+    @media (max-width:640px) {
+        .table_indicators th {font-size: 12px; padding: 6px !important;}
+        .table_indicators td {font-size: 12px; padding: 6px !important;}
+    }
+
+    @media (min-width: 641px) and (max-width:830px) {
+        .table_indicators th, td {font-size: 12px; padding: 7px!important;}      
+    }
+
+    @media (min-width:831px) and (max-width:950px) {
+        .table_indicators th, td {font-size: 18px}
+    }
+
+    @media (min-width:951px) and (max-width:1228px) {
+        .table_indicators th, td {font-size: 18px}
+    }
+
+    @media (min-width:1229px) and (max-width:1399px) {
+        .table_indicators th, td {font-size: 18px}
+    }
+
+
+</style>
+
+<section>
+
+    <table class="rounded table table-bordered text-center table_indicators">
+
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Comida</th>
+                <th scope="col">Despensa</th>
+                <th scope="col">Pagos Servicios</th>
+                <th scope="col">Pagos Extras</th>
+
+            </tr>
+        </thead>
+
+        <tbody class="table-default table-bordered">
+
+            <tr>
+                <td>{{datostotalesx.total_comida}}</td>
+                <td>{{datostotalesx.total_despensa}}</td>
+                <td>{{datostotalesx.total_servicios}}</td>
+                <td>{{datostotalesx.total_extras}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</section>
