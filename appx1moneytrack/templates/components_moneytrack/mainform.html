@@ -46,12 +46,13 @@
 
 <section>
     <form class="formoney" action="{%url 'saveformoneyreg'%}" method="POST">
+        {% csrf_token %}
 
         <div class="container boxinputs center">
             <div class="row"> <input class="center input30" name="newreg_quantity" placeholder="Cantidad: "> </input> </div>
-            
+
             <div class="row"> <input class="center input30" name="newreg_concept" placeholder="Concepto: "> </input> </div>
-            
+
             <div class="row">
                 <select class="center itemsupform input30" name="newreg_categoryselect">
                     {% for val in categoryx %}
@@ -59,9 +60,9 @@
                     {% endfor %}
                 </select>
             </div>
-            
+
             <div class="row"> <button class="center btn btn-outline-info btn-sm" type="submit" name="button">Agregar</button></div>
-            
+
             <div class="row"></div>
 
         </div>
