@@ -1,53 +1,57 @@
 <style media="screen">
 
-    @media (max-width:640px) {
-        .table_indicators th {font-size: 12px; padding: 6px !important;}
-        .table_indicators td {font-size: 12px; padding: 6px !important;}
-    }
-
-    @media (min-width: 641px) and (max-width:830px) {
-        .table_indicators th, td {font-size: 12px; padding: 7px!important;}
-    }
-
-    @media (min-width:831px) and (max-width:950px) {
-        .table_indicators th, td {font-size: 18px}
-    }
-
-    @media (min-width:951px) and (max-width:1228px) {
-        .table_indicators th, td {font-size: 18px}
-    }
-
-    @media (min-width:1229px) and (max-width:1399px) {
-        .table_indicators th, td {font-size: 18px}
-    }
-
+  .indicators_topbanner{background-color:#6CB8F6; height:50px}
+  .font_indicators_topbanner{color:white; padding-top:8px}
+  .font_topbanner{color:white;}
 
 </style>
 
-<section>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
 
-    <table id="" class="rounded table table-bordered text-center table_indicators">
+        <div class="col-md-10 col-12">
+          <div class="container-fluid">
 
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Comida</th>
-                <th scope="col">Despensa</th>
-                <th scope="col">Pagos Servicios</th>
-                <th scope="col">Pagos Extras</th>
+            <div class="row rounded-top indicators_topbanner">
+              <div class="centradox font_indicators_topbanner">
+                <h3>Totales Consumidos:</h3>
+              </div>
+            </div> <!--end row top banner-->
 
-            </tr>
-        </thead>
+            <div class="row rounded indicatiors_container font_topbanner">
 
-        <tbody class="table-default table-bordered">
+                <table id="" class=" table text-center">
 
-            <tr>
-                <td>{{datostotalesx.total_comida}}</td>
-                <td>{{datostotalesx.total_despensa}}</td>
-                <td>{{datostotalesx.total_servicios}}</td>
-                <td>{{datostotalesx.total_extras}}</td>
-            </tr>
+                    <thead class="thead-light">
+                      <tr>
+                          <th scope="col">Comida</th>
+                          <th scope="col">Despensa</th>
+                          <th scope="col">Pagos Servicios</th>
+                          <th scope="col">Pagos Extras</th>
+                          <th scope="col">Total de gastos</th>
 
-        </tbody>
-    </table>
+                      </tr>
+                    </thead>
 
-</section>
+                    <tbody class="table-default">
+
+                      <tr>
+                          <td>{{datostotalesx.total_comida}}</td>
+                          <td>{{datostotalesx.total_despensa}}</td>
+                          <td>{{datostotalesx.total_servicios}}</td>
+                          <td>{{datostotalesx.total_extras}}</td>
+                          <td>{{datostotalesx.total_neto}}</td>
+                      </tr>
+
+                    </tbody>
+                </table>
+
+            </div> <!--end row indicatiors_container-->
+          </div> <!--end container fluid small responsive center--->
+
+        </div> <!--- end contenido main central -->
+
+        <div class="col-md-1"></div>
+    </div>
+</div>

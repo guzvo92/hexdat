@@ -2,10 +2,10 @@ from .models import *
 
 def totalgastos():
     registros = Registrogasto.objects.all()
-    total_comida = 0
-    total_despensa = 0
-    total_servicios = 0
-    total_extras = 0
+    xtotal_comida = 0
+    xtotal_despensa = 0
+    xtotal_servicios = 0
+    xtotal_extras = 0
 
 
     #filtros https://docs.djangoproject.com/en/3.1/topics/db/queries/
@@ -13,27 +13,27 @@ def totalgastos():
     Query_despensa = Registrogasto.objects.filter(category="despensa")
     Query_servicios = Registrogasto.objects.filter(category="pagos servicios")
     Query_extras = Registrogasto.objects.filter(category="pagos extras")
-    
+
     for query in Query_comida:
-      total_comida += query.quantity
-    
+      xtotal_comida += query.quantity
+
     for query in Query_despensa:
-      total_despensa += query.quantity
- 
+      xtotal_despensa += query.quantity
+
     for query in Query_servicios:
-      total_servicios += query.quantity
+      xtotal_servicios += query.quantity
 
     for query in Query_extras:
-      total_extras += query.quantity
+      xtotal_extras += query.quantity
+
+    xtotal_neto = xtotal_comida + xtotal_despensa + xtotal_servicios + xtotal_extras
 
     dic_datostotales = {
-        'total_comida' : total_comida, 
-        'total_despensa' : total_despensa,
-        'total_servicios' : total_servicios,
-        'total_extras' :total_extras
+        'total_comida' : xtotal_comida,
+        'total_despensa' : xtotal_despensa,
+        'total_servicios' : xtotal_servicios,
+        'total_extras' : xtotal_extras,
+        'total_neto': xtotal_neto
         }
 
     return dic_datostotales
-
-
-

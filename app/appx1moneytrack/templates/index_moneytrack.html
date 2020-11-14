@@ -15,33 +15,33 @@
 <!-------------------------------------------------------------------->
 {% block content %}
 
-<div class="e30"></div>
+<style media="screen">
+  .index_page{background-color:#EAEFF1}
+</style>
 
-<div class="container-fluid">
+<div class="index_page">
 
-    <div class="row">
+  <div class="e63"></div>
 
-        <div class="col-md-1"></div>
+  <div class="e30"></div>
 
-        <div class="col-md-10 col-12">
+  {% include 'components_moneytrack/horizontal_form.html' %}
 
-            {% include 'components_moneytrack/indicators.html' %}
+  <div class="e30"></div>
 
-            <div class="e30"></div>
+  {% include 'components_moneytrack/indicators.html' %}
 
-            {% include 'components_moneytrack/mainform.html' %}
+  <div class="e30"></div>
 
-            <div class="e30"></div>
+  {% include 'components_moneytrack/rendersup.html' %}
 
-            {% include 'components_moneytrack/mainrender.html' %}
-
-        </div>
-
-        <div class="col-md-1"></div>
+  <div class="e30"></div>
+  
+  <div class="e30"></div>
 
 
-    </div>
 </div>
+
 
 {% endblock %}
 <!-------------------------------------------------------------------->

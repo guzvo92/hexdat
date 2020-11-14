@@ -1,0 +1,70 @@
+<style>
+    @media (max-width:640px) {
+        th,td {font-size: 9px; padding: 6px !important;}
+    }
+
+    @media (min-width: 641px) and (max-width:830px) {
+        th, td {font-size: 9px; padding: 7px!important;}
+    }
+
+    @media (min-width:831px) and (max-width:950px) {
+        th, td {font-size: 18px}
+    }
+
+    @media (min-width:951px) and (max-width:1228px) {
+        th, td {font-size: 18px}
+    }
+
+    @media (min-width:1229px) and (max-width:1399px) {
+        th, td {font-size: 18px}
+    }
+
+    .dataTables_wrapper{margin-left:auto; margin-right:auto} /*IMPORTANTE!!!!!!!!!*/
+
+</style>
+
+{%load static%}
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css"/>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-10 col-12">
+
+          <table id="tablag" class="center rounded table table-striped text-center table-hover-info">
+
+              <thead class="thead-dark">
+                  <tr>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Concepto</th>
+                      <th scope="col">Categoria</th>
+                      <th scope="col">Fecha</th>
+                      <th scope="col">Opcion</th>
+                  </tr>
+              </thead>
+
+              <tbody class="table-default">
+
+                {% for registro in registroslistx %}
+
+                  <tr>
+                      <td>{{registro.quantity}}</td>
+                      <td>{{registro.concept}}</td>
+                      <td>{{registro.category}}</td>
+                      <td>{{registro.created_at }}</td>
+                      <td><a href="{% url 'clearformreg' idx=registro.id %}">Eliminar</a></td>
+                  </tr>
+
+                {% endfor %}
+              </tbody>
+            </table>
+
+
+        </div> <!--- end contenido central -->
+
+        <div class="col-md-1"></div>
+    </div>
+</div>

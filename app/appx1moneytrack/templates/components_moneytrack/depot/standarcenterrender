@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-10 col-12">
+
+
+        </div> <!--- end contenido central -->
+
+        <div class="col-md-1"></div>
+    </div>
+</div>

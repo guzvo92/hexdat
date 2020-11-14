@@ -4,10 +4,12 @@ from django.shortcuts import render
 from django.shortcuts import render, HttpResponse, redirect
 from .models import *
 from .services import *
+from .service_pdf import *
 
 
 def index_moneytrack(request):
 	registroslist = Registrogasto.objects.all()
+
 	pruebas= "Este es un texto de pruebas"
 	category = (
 	('comida'),
@@ -15,7 +17,7 @@ def index_moneytrack(request):
 	('pagos servicios'),
 	('pagos extras')
 	)
-	
+
 	datostotales = totalgastos()
 
 	return render(
@@ -43,3 +45,8 @@ def clear_form_reg(request,idx):
 	reg = Registrogasto.objects.get(pk=idx)
 	reg.delete()
 	return redirect('index_moneytrack')
+
+
+def report(request):
+	response_import = report_fn()
+	return response_import

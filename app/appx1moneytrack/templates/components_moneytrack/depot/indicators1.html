@@ -1,0 +1,59 @@
+<style media="screen">
+
+  .indicators_topbanner{background-color:#6CB8F6; height:50px}
+
+
+</style>
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-10 col-12">
+
+          <div class="row rounded indicators_topbanner">
+            <div class="centradox font_topbanner">
+              <h3>Totales Consumidos:</h3>
+            </div>
+          </div> <!--end row top banner-->
+
+          <div class="row rounded indicatiors_container font_topbanner">
+
+              <table id="" class=" table text-center">
+
+                  <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Comida</th>
+                        <th scope="col">Despensa</th>
+                        <th scope="col">Pagos Servicios</th>
+                        <th scope="col">Pagos Extras</th>
+                        <th scope="col">Total de gastos</th>
+
+                    </tr>
+                  </thead>
+
+                  <tbody class="table-default">
+
+                    <tr>
+                        <td>{{datostotalesx.total_comida}}</td>
+                        <td>{{datostotalesx.total_despensa}}</td>
+                        <td>{{datostotalesx.total_servicios}}</td>
+                        <td>{{datostotalesx.total_extras}}</td>
+                        <td>{{datostotalesx.total_extras}}</td>
+                    </tr>
+
+                  </tbody>
+              </table>
+
+          </div> <!--end row top banner-->
+
+        </div>
+
+        <div class="col-md-1"> </div>
+
+
+    </div>
+
+</div>
