@@ -43,7 +43,7 @@
           <form class="formoney" action="{%url 'saveformoneyreg'%}" method="POST">
               {% csrf_token %}
 
-          <div class="container rounded ">
+          <div class="container-fluid rounded ">
 
             <div class="rounded-top text-center header_form ">
               <h3 class="header_form_title">Agrega un nuevo item:</h3>
@@ -51,20 +51,22 @@
 
             <div class="row formcontainer">
 
-                  <div class="col-12 col-lg-3">
+                  <div class="col-xl-2"></div>
+
+                  <div class="col-12 col-xl-2">
                     <div class="centradox container_inputform">
                         <input class= "element30" name="newreg_quantity" placeholder="Cantidad: "> </input>
                     </div>
 
                   </div>
 
-                  <div class="col-12 col-lg-3">
+                  <div class="col-12 col-xl-2">
                     <div class="centradox centradoy container_inputform">
                         <input class="center element30" name="newreg_concept" placeholder="Concepto: "> </input>
                     </div>
                   </div>
 
-                  <div class="col-12 col-lg-3">
+                  <div class="col-12 col-xl-2">
                     <div class="centradox container_inputform">
                         <select class="center itemsupform element30" name="newreg_categoryselect">
                             {% for val in categoryx %}
@@ -74,11 +76,15 @@
                     </div>
                   </div>
 
-                  <div class="col-12 col-lg-3">
+                  <div class="col-12 col-xl-2">
                     <div class="centradox container_butform">
                        <button class="btn btn-outline-info btn-sm element30" type="submit" name="button">Agregar</button>
                     </div>
                   </div>
+
+                  <div class="col-xl-2"></div>
+
+
 
               </div>
             </div>
