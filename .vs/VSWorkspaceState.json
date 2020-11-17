@@ -1,13 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\appmain0core",
-    "\\appmain0core\\static",
-    "\\appmain0core\\templates",
-    "\\appx1moneytrack",
-    "\\appx1moneytrack\\templates",
-    "\\appx1moneytrack\\templates\\components_moneytrack"
+    "\\app",
+    "\\app\\appmain0core\\templates",
+    "\\app\\appmain1admin",
+    "\\app\\appx1moneytrack",
+    "\\app\\appx1moneytrack\\templates",
+    "\\app\\appx1moneytrack\\templates\\components_moneytrack",
+    "\\hexdat"
   ],
-  "SelectedNode": "\\appx1moneytrack\\templates\\components_moneytrack\\mainrender.html",
+  "SelectedNode": "\\hexdat\\settings.py",
   "PreviewInSolutionExplorer": false
 }
