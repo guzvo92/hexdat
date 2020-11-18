@@ -45,9 +45,7 @@
           th, td {font-size: 16px}
       }
 
-
   .topbanner_content{color:white}
-
   .selector_header{background-color:#6CB8F6; height:50px;}
   .selector_container{
     border: 2px solid #D4D8DB;
@@ -68,7 +66,7 @@
 
   .imgicon{height:30px; padding-right:10px}
   .linkpath{width:120px}
-  .iconpdf{height:40px; margin-top:5px}
+  .iconpdf{height:40px; margin-top:5px; margin-right:56px}
 
 </style>
 
@@ -96,19 +94,14 @@
 
                   <div class="rounded-top text-center selector_header marginadoraro">
                       <div class="row">
-                          <div class="col-10 col-md-9 col-lg-10 col-xl-11">
-                              <h3 class="selector_header_title">Registros:</h3>
-                          </div>
-                          <div class="col-2 col-md-3 col-lg-2 col-xl-1 ">
-                              <a href="/mon">
-                                  <img class=" iconpdf" src="{% static 'appx1moneytrack/pdf.png'%}" alt="" />
-                              </a>
-                          </div>
-                          
-                          
+
+                          <h3 class=" centradox selector_header_title">Registros:</h3>
+                          <a href="/mon/report">
+                              <img class=" iconpdf" src="{% static 'appx1moneytrack/pdf.png'%}" alt="" />
+                          </a>
 
                       </div>
-                    
+
                   </div>
                   <div class="rounded-bottom selector_container marginadoraro">
 
