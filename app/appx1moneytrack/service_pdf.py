@@ -28,10 +28,12 @@ def report_fn():
     tiemponow = (datetime.today()).strftime("%Y-%m-%d %H:%M")
 
     #creando los headers
+
+    namepdf = "Rep_Gastos_" + str(tiemponow)
     c.drawInlineImage(image, 40, 745, 100, 30)
     c.setLineWidth(.3)
     c.setFont('Helvetica',22)
-    c.drawString(200,750,'Reporte de gastos')
+    c.drawString(200,750,namepdf)
     c.setFont('Helvetica-Bold',12)
     c.drawString(463,750, str(tiemponow)  )
     c.line(460,747,560,747) #(x,height,y,height)
