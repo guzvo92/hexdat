@@ -12,17 +12,30 @@ def index_moneytrack(request):
 
 	pruebas= "Este es un texto de pruebas"
 	category = (
-	('comida'),
-	('despensa'),
-	('pagos servicios'),
-	('pagos extras')
+	('Comida'),
+	('Despensa'),
+	('Servicios'),
+	('Extras')
 	)
+
+	owner = (
+	('G'),
+	('D'),
+	)
+
+	type = (
+	('PRI'),
+	('PUB'),
+	)
+
 
 	datostotales = totalgastos()
 
 	return render(
 		request,'index_moneytrack.html',
-		{'registroslistx':registroslist, 'pruebasx':pruebas, 'categoryx':category, 'datostotalesx':datostotales}
+		{'registroslistx':registroslist, 'pruebasx':pruebas,
+		'categoryx':category, 'datostotalesx':datostotales,
+		'ownerx':owner, 'typex': type,}
 	)
 
 
