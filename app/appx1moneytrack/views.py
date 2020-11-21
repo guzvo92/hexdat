@@ -7,7 +7,7 @@ from .services import *
 from .service_pdf import *
 
 
-def index_moneytrack(request):
+def index_moneytrack_all(request):
 	registroslist = Registrogasto.objects.all()
 
 	pruebas= "Este es un texto de pruebas"
@@ -32,7 +32,38 @@ def index_moneytrack(request):
 	datostotales = totalgastos()
 
 	return render(
-		request,'index_moneytrack.html',
+		request,'index_moneytrack_all.html',
+		{'registroslistx':registroslist, 'pruebasx':pruebas,
+		'categoryx':category, 'datostotalesx':datostotales,
+		'ownerx':owner, 'typex': type,}
+	)
+
+def index_moneytrack_pub(request):
+	registroslist = Registrogasto.objects.all()
+
+	pruebas= "Este es un texto de pruebas"
+	category = (
+	('Comida'),
+	('Despensa'),
+	('Servicios'),
+	('Extras')
+	)
+
+	owner = (
+	('G'),
+	('D'),
+	)
+
+	type = (
+	('PRI'),
+	('PUB'),
+	)
+
+
+	datostotales = totalgastos()
+
+	return render(
+		request,'index_moneytrack_pub.html',
 		{'registroslistx':registroslist, 'pruebasx':pruebas,
 		'categoryx':category, 'datostotalesx':datostotales,
 		'ownerx':owner, 'typex': type,}
