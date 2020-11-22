@@ -14,7 +14,7 @@ def report_fn():
 
     registros = Registrogasto.objects.all()
     datostotalesx = totalgastos()
-    print()
+
     #print(datostotalesx.get(total_comida))
     #print(datostotalesx.total_despensa)
 
