@@ -10,16 +10,14 @@ from .models import *
 from datetime import datetime, timedelta
 
 
-def report_fn():
-
-    registros = Registrogasto.objects.all()
-    datostotalesx = totalgastos()
+def report_fn(type,registros, datostotalesx): 
 
     #print(datostotalesx.get(total_comida))
     #print(datostotalesx.total_despensa)
 
-    tiemponow = (datetime.today()).strftime("%Y-%m-%d %H:%M")
-    namepdf = "RG." + str(tiemponow)
+    tiemponow = (datetime.today()).strftime("%d-%m-%y %H:%M")
+    namepdf = "R[" + type +"]" + str(tiemponow) 
+    titulo = "Reporte de Gastos "+ type
 
     #creando los httpresponse headers con pdf
     #response = HttpResponse("hello world")
@@ -36,10 +34,10 @@ def report_fn():
     c.drawInlineImage(image, 40, 745, 100, 30)
     c.setLineWidth(.3)
     c.setFont('Helvetica',22)
-    c.drawString(200,750,"Reporte de Gastos")
+    c.drawString(170,750,titulo)
     c.setFont('Helvetica-Bold',12)
-    c.drawString(443,750, str(tiemponow)  )
-    c.line(420,747,560,747) #(x,height,y,height)
+    c.drawString(450,750, str(tiemponow)  )
+    c.line(430,747,550,747) #(xini,yini,xfin,yfin)
 
     #haciendo el bloque de indicadores
 

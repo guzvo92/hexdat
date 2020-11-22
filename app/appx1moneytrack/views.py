@@ -28,23 +28,23 @@ type = (
 def index_moneytrack_all(request):
 	registroslist = Registrogasto.objects.filter(owner="G")
 	datostotales = totalgastosAll() ### servicio distinto
-	reporteurl = "/mon/report"
-	return render(
-		request,'index_moneytrack.html',
-		{'registroslistx':registroslist, 'pruebasx':pruebas,
-		'categoryx':category, 'datostotalesx':datostotales,
-		'ownerx':owner, 'typex': type,}
-	)
-
-def index_moneytrack_pub(request):
-	registroslist = Registrogasto.objects.filter(type = "PUB")
-	datostotales = totalgastosPublic() ### servicio distinto
 	reporteurl = "/mon/reportall"
 	return render(
 		request,'index_moneytrack.html',
 		{'registroslistx':registroslist, 'pruebasx':pruebas,
 		'categoryx':category, 'datostotalesx':datostotales,
-		'ownerx':owner, 'typex': type,}
+		'ownerx':owner, 'typex': type, 'reporteurlx':reporteurl}
+	)
+
+def index_moneytrack_pub(request):
+	registroslist = Registrogasto.objects.filter(type = "PUB")
+	datostotales = totalgastosPublic() ### servicio distinto
+	reporteurl = "/mon/reportpub"
+	return render(
+		request,'index_moneytrack.html',
+		{'registroslistx':registroslist, 'pruebasx':pruebas,
+		'categoryx':category, 'datostotalesx':datostotales,
+		'ownerx':owner, 'typex': type,'reporteurlx':reporteurl}
 	)
 
 
@@ -73,11 +73,19 @@ def clear_form_reg(request,idx):
 	return redirect('index_moneytrack_pub')
 
 
-def report(request):
-	response_import = report_fn()
+def reportpub(request):
+	type = "PUB"
+	registros = Registrogasto.objects.filter(type = "PUB")
+	datostotalesx = totalgastosPublic()
+	response_import = report_fn(type,registros,datostotalesx)
+	
 	return response_import
 
 def reportall(request):
-	response_import = reportall_fn()
+	type = "GLI"
+	registros = Registrogasto.objects.filter(owner="G")
+	datostotalesx = totalgastosAll()
+	response_import = report_fn(type,registros,datostotalesx)
+
 	return response_import
 

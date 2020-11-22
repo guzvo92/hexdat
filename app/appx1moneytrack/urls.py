@@ -11,6 +11,6 @@ urlpatterns = [
     path('all/', views.index_moneytrack_all, name="index_moneytrack_all"),
     path('save_formoney_reg/', views.save_formoney_reg, name="saveformoneyreg"),
     path('clear_form_reg/<int:idx>', views.clear_form_reg, name="clearformreg"),
-    path('report/', views.report, name="report"),
+    path('reportpub/', views.reportpub, name="report"),
     path('reportall/', views.reportall, name="reportall"),
 ]
