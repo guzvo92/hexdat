@@ -10,7 +10,7 @@
 
 {% endblock %}
 
-{% block title %} Inicio {% endblock %}
+{% block title %} Gman {% endblock %}
 
 <!-------------------------------------------------------------------->
 {% block content %}
@@ -21,21 +21,9 @@
 
 <div class="index_page">
 
-  <div class="e63"></div>
-
   <div class="e30"></div>
 
-  {% include 'components_moneytrack/horizontal_form.html' %}
-
-  <div class="e30"></div>
-
-  {% include 'components_moneytrack/indicators.html' %}
-
-  <div class="e30"></div>
-
-  {% include 'components_moneytrack/registros_pub.html' %}
-
-  <div class="e30"></div>
+  {% include 'components_gman/projects.html' %}
 
   <div class="e30"></div>
 
@@ -49,7 +37,5 @@
 
 {% block importscript %}
 
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
-<script src="{% static 'gmanscripts.js' %}" type="text/javascript"></script>
 
 {% endblock %}

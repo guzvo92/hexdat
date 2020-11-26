@@ -1,0 +1,101 @@
+{% load static %}
+
+<style media="screen">
+
+  @media (max-width:640px) {
+    .item_img_height{height:200px}
+    .item{height:370px;margin-bottom:50px}
+  }
+
+  @media (min-width: 640px) and (max-width:830px) {
+    .item_img_height{height:200px}
+    .item{height:430px;margin-bottom:50px}
+  }
+
+  @media (min-width:831px) and (max-width:950px) {
+    .item_img_height{height:200px}
+    .item{height:440px;margin-bottom:30px}
+  }
+
+  @media (min-width:951px) and (max-width:1228px) {
+    .item_img_height{height:150px}
+    .item{height:440px;margin-bottom:30px}
+  }
+
+  @media (min-width:1229px) and (max-width:1399px) {
+    .item_img_height{height:200px}
+    .item{height:430px;margin-bottom:20px}
+  }
+
+  @media (min-width:1400px) {
+    .item_img_height{height:200px}
+    .item{height:430px; margin-bottom:20px}
+  }
+
+  .item_topbanner{background-color:#6CB8F6; height:50px}
+  .item_font_topbanner{color:white; padding-top:8px}
+  .item_container{
+    border: 2px solid #D4D8DB;
+    background-color:white;
+    color:black;}
+
+  .item_img{margin-left:auto; margin-right:auto; background-size:cover;}
+
+  .fotoc1{background-image: url("{% static 'testimg.jpg'%}")}
+  .fotoc2{background-image: url("{%static 'img/c2-coolcards/lottery.jpg'%}")}
+  .fotoc3{background-image: url("{%static 'img/c2-coolcards/mysteries.jpg'%}")}
+  .item_title{margin:10px 10px 0px 10px}
+  .item_description{margin:10px 10px 10px 10px}
+
+
+</style>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 red"></div>
+
+
+    <div class="col-md-10 col-12 ">
+      <div class="container">
+        <div class="row">
+
+          {% for proyecto in projectlistx %}
+
+          <div class="item col-12 col-md-6 col-lg-4">
+            <div class="rounded-top item_topbanner">
+              <div class="centradox item_font_topbanner text-center">
+                <h3> {{proyecto.category}} </h3>
+              </div>
+
+              <div class="item_img item_img_height fotoc1">  </div>
+
+              <div class="item_container">
+                <h6 class="item_title ">{{proyecto.title}} </h6>
+                <div class="item_description "> {{proyecto.description}} </div>
+              </div>
+            </div> <!--end row top banner-->
+          </div> <!--end item 1-->
+
+          {% endfor %}
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-1"></div>
+
+
+
+
+
+
+
+
+  </div> <!---end main row ---->
+</div> <!---end main container fluid ---->

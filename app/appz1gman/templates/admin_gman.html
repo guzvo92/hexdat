@@ -1,0 +1,42 @@
+
+{% extends '_layout.html' %}
+<!--Includes son posibles porque tienes el extends-->
+<!--pero no puedes extender a otra pagina la recursion -->
+<!-- Includes deben estar dentro de un Block -->
+
+{% load static %}
+
+{% block import %}
+
+{% endblock %}
+
+{% block title %} Gman {% endblock %}
+
+<!-------------------------------------------------------------------->
+{% block content %}
+
+<style media="screen">
+  .index_page{background-color:#EAEFF1}
+</style>
+
+<div class="index_page">
+
+  <div class="e63"></div>
+
+  {% include 'components_gman/AdminProyForm.html' %}
+
+  <div class="e10"></div>
+
+  {% include 'components_gman/AdminRenderProj.html' %}
+
+</div>
+
+
+{% endblock %}
+<!-------------------------------------------------------------------->
+
+
+{% block importscript %}
+
+
+{% endblock %}

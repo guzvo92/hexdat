@@ -1,0 +1,123 @@
+<style media="screen">
+
+    @media (max-width:640px) {
+        th,td {font-size: 9px; padding: 6px !important;}
+        .container_butform{width:136px;}
+    }
+
+    @media (min-width: 641px) and (max-width:830px) {
+        th, td {font-size: 9px; padding: 7px!important;}
+        .container_butform{width:136px;}
+    }
+
+    @media (min-width:831px) and (max-width:950px) {
+        th, td {font-size: 18px}
+        .container_butform{width:136px;}
+    }
+
+    @media (min-width:951px) and (max-width:1228px) {
+        th, td {font-size: 18px}
+        .container_butform{width:136px;}
+    }
+
+    @media (min-width:1229px) and (max-width:1399px) {
+        th, td {font-size: 18px}
+        .container_butform{width:100px;}
+    }
+
+    @media (min-width:1399px){
+        th, td {font-size: 18px}
+        .container_butform{width:136px;}
+    }
+
+  .elementbut{width:360px; height:31px; margin-bottom:10px; margin-top:10px}
+  .element10{width:160px; height:31px; margin-bottom:10px; margin-top:10px}
+
+  .element60{width:360px; height:31px; margin-bottom:10px; margin-top:10px}
+  .element90{width:360px; margin-bottom:10px; margin-top:10px}
+  .container_inputform{width:360px;}
+  .container_selectform{width:180px;}
+
+
+  .btn{width:120px}
+  .catselector {height:31px}
+  .center{margin-left:auto; margin-right:auto}
+  .formcontainer{ background-color: white; border: 2px solid #D4D8DB;}
+  .header_form{height:50px;background-color:#6CB8F6; color:white; margin: 0 -15px 0 -15px; }
+  .header_form_title{padding-top:6px}
+
+</style>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-10 col-12">
+
+          <form class="formoney" action="{%url 'save_edit_project' idx=xproject.id%}" method="POST">
+              {% csrf_token %}
+
+          <div class="container-fluid rounded ">
+
+            <div class="rounded-top text-center header_form ">
+              <h3 class="header_form_title">Edita el proyecto:</h3>
+            </div>
+
+            <div class="row formcontainer">
+
+                  <div class="col-12">
+                    <div class="centradox container_inputform">
+                        <input class= "element60" name="newreg_title" value="{{xproject.title}}"> </input>
+                    </div>
+
+                  </div>
+
+                  <div class="col-12">
+                    <div class="centradox centradoy container_inputform">
+                        <textarea class="element90 center" name="newreg_description"
+                        placeholder="Concepto: "rows="5" cols="50" 7
+                        onKeyDown="cuenta()" onKeyUp="cuenta()">{{xproject.description}}
+                        </textarea>
+                    </div>
+                  </div>
+
+
+                  <div class="col-12">
+                    <div class="centradox container_selectform">
+                        <select class="center itemsupform element10" name="newreg_categoryselect">
+                            {% for val in categoryx %}
+                            <option value="{{xproject.category}}">{{val}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                  </div>
+
+
+                  <div class="col-12 ">
+                    <div class="centradox container_butform">
+                       <button class="btn btn-outline-info btn-sm elementbut" type="submit" name="button">
+                         Grabar
+                       </button>
+                    </div>
+                  </div>
+
+
+
+
+              </div>
+            </div>
+
+          </form>
+
+        </div> <!--- end contenido central -->
+
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+<script>
+function cuenta(){
+       document.forms[0].caracteres.value=document.forms[0].texto.value.length
+}
+</script>

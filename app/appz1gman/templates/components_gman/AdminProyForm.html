@@ -1,0 +1,115 @@
+<style media="screen">
+
+    @media (max-width:640px) {
+        th,td {font-size: 9px; padding: 6px !important;}
+        .container_butform{width:136px;}
+    }
+
+    @media (min-width: 641px) and (max-width:830px) {
+        th, td {font-size: 9px; padding: 7px!important;}
+        .container_butform{width:136px;}
+    }
+
+    @media (min-width:831px) and (max-width:950px) {
+        th, td {font-size: 18px}
+        .container_butform{width:136px;}
+    }
+
+    @media (min-width:951px) and (max-width:1228px) {
+        th, td {font-size: 18px}
+        .container_butform{width:136px;}
+    }
+
+    @media (min-width:1229px) and (max-width:1399px) {
+        th, td {font-size: 18px}
+        .container_butform{width:100px;}
+    }
+
+    @media (min-width:1399px){
+        th, td {font-size: 18px}
+        .container_butform{width:136px;}
+    }
+
+  .elementbut{width:180px; height:31px; margin-bottom:10px; margin-top:10px}
+  .element10{width:160px; height:31px; margin-bottom:10px; margin-top:10px}
+  .element30{width:160px; height:31px; margin-bottom:10px; margin-top:10px}
+  .element60{width:160px; height:61px; margin-bottom:10px; margin-top:10px}
+  .container_inputform{width:180px;}
+
+
+  .btn{width:120px}
+  .catselector {height:31px}
+  .center{margin-left:auto; margin-right:auto}
+  .formcontainer{ background-color: white; border: 2px solid #D4D8DB;}
+  .header_form{height:50px;background-color:#6CB8F6; color:white; margin: 0 -15px 0 -15px; }
+  .header_form_title{padding-top:6px}
+
+</style>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-10 col-12">
+
+          <form class="formoney" action="{%url 'save_project'%}" method="POST">
+              {% csrf_token %}
+
+          <div class="container-fluid rounded ">
+
+            <div class="rounded-top text-center header_form ">
+              <h3 class="header_form_title">Agrega un nuevo proyecto:</h3>
+            </div>
+
+            <div class="row formcontainer">
+
+                  <div class="col-xl-1"></div>
+
+                  <div class="col-12 col-xl-2">
+                    <div class="centradox container_inputform">
+                        <input class= "element30" name="newreg_title" placeholder="Titulo: "> </input>
+                    </div>
+
+                  </div>
+
+                  <div class="col-12 col-xl-6">
+                    <div class="centradox centradoy container_inputform">
+                        <textarea class="element60 center" name="newreg_description"
+                        placeholder="Concepto: "rows="4" cols="50">
+                        </textarea>
+                    </div>
+                  </div>
+
+
+                  <div class="col-12 col-xl-2">
+                    <div class="centradox container_inputform">
+                        <select class="center itemsupform element10" name="newreg_categoryselect">
+                            {% for val in categoryx %}
+                            <option value="{{val}}">{{val}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                  </div>
+
+
+                  <div class="col-12 col-xl-12">
+                    <div class="centradox container_butform">
+                       <button class="btn btn-outline-info btn-sm elementbut" type="submit" name="button">Agregar</button>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-1"></div>
+
+
+
+              </div>
+            </div>
+
+          </form>
+
+        </div> <!--- end contenido central -->
+
+        <div class="col-md-1"></div>
+    </div>
+</div>

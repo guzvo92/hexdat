@@ -1,0 +1,106 @@
+{%load static%}
+
+<style media="screen">
+
+  @media (max-width:640px) {
+
+      th, td {font-size: 9px}
+      .linkpath{width:100px}
+  }
+
+  @media (min-width: 640px) and (max-width:830px) {
+
+      th, td {font-size: 9px}
+      .linkpath{width:120px}
+  }
+
+  @media (min-width:831px) and (max-width:950px) {
+
+      th, td {font-size: 12px}
+      .linkpath{width:120px}
+  }
+
+  @media (min-width:951px) and (max-width:1228px) {
+
+      th, td {font-size: 12px}
+      .linkpath{width:120px}
+  }
+
+  @media (min-width:1229px) and (max-width:1399px) {
+
+      th, td {font-size: 16px}
+      .linkpath{width:120px}
+  }
+
+  @media (min-width:1400px) {
+
+      th, td {font-size: 16px}
+      .linkpath{width:120px}
+  }
+
+  .table_container{
+    border: 2px solid #D4D8DB;
+    background-color:white;
+    color:black;}
+
+  .imgicon{height:30px; padding-right:10px}
+
+  .text_titulos_tabla{text-align:center}
+</style>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-10 col-12">
+
+          <div class="container-fluid table_container ">
+            <div class="row">
+
+              <table class=
+              "rounded table table-striped table-light">
+                <thead class="thead-light">
+                  <tr class="text_titulos_tabla">
+                    <th class="thcharname " scope="col">Titulo</th>
+                    <th scope="col ">Descripcion</th>
+                    <th scope="col ">Categoria</th>
+                    <th scope="col ">Creado</th>
+                    <th scope="col ">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {% for proyecto in projectlistx %}
+
+                  <tr>
+                    <th scope="row">{{proyecto.title}}</th>
+                    <td>{{proyecto.description}}</td>
+                    <td>{{proyecto.category}}</td>
+                    <td>{{proyecto.created_at}}</td>
+                    <td class="linkpath">
+                      <a href="{% url 'clear_project' idx=proyecto.id %}">
+                        <img class="imgicon" src="{% static 'appx1moneytrack/eliminar1.svg'%}" alt="">
+                      </a>
+                      <a href="{% url 'edit_project' idx=proyecto.id %}">
+                        <img class="imgicon" src="{% static 'appx1moneytrack/editar1.png'%}" alt="">
+                      </a>
+                    </td>
+                  </tr>
+
+                  {% endfor %}
+
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+
+
+        </div> <!--- end contenido central -->
+
+        <div class="col-md-1"></div>
+    </div>
+</div>

@@ -20,8 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.appmain0core.urls')),
     path('mon/', include('app.appx1moneytrack.urls')),
-    
-    
+    path('gman/', include('app.appz1gman.urls')),
+
 ]
 
 
