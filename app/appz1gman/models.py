@@ -5,14 +5,14 @@ from django.db import models
 
 class Registroproyecto(models.Model):
     title = models.CharField(max_length=50)
-    description = models.CharField(max_length=100)
+    description = models.CharField(max_length=120)
     category = models.CharField(max_length=50)
-    mainimage = models.ImageField(default='null',upload_to ="projects")
-    image1 = models.ImageField(default='null')
-    image2 = models.ImageField(default='null')
-    image3 = models.ImageField(default='null')
-    image4 = models.ImageField(default='null')
-    image5 = models.ImageField(default='null')
+    mainimage = models.ImageField(default='null',upload_to ="projectsgman")
+    image1 = models.ImageField(default='null',upload_to ="projectsgman")
+    image2 = models.ImageField(default='null',upload_to ="projectsgman")
+    image3 = models.ImageField(default='null',upload_to ="projectsgman")
+    image4 = models.ImageField(default='null',upload_to ="projectsgman")
+    image5 = models.ImageField(default='null',upload_to ="projectsgman")
     created_at = models.DateTimeField(auto_now_add=True, editable=False )
     updated_at = models.DateTimeField(auto_now=True)
 

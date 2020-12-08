@@ -84,26 +84,33 @@
   <div class="row">
     <div id="banner_subject" class="col-12 col-xl-3">
 
-      <div class="espaciado"></div>
+      <div class="e50"></div>
 
       <div class=" centradox foto rounded-circle"></div>
 
       <div id="text_content" class=" centradox ">
-        <div class="text-center  text1"> Carlos Adame Cuevas</div>
-        <div class="text-center text2"> Ingeniero de proyectos en Lamosa</div>
-        <div class="text-center text3">
+        <div class="text-center  text_gman_20"> Carlos Adame Cuevas</div>
+        <div class="text-center text_roboto_15"> Ingeniero de proyectos en Lamosa</div>
+        <div class="text-center text_roboto_15">
           Intereses: Automatizacion, Control de procesos,
           Innovacion, Electronica, Desarrollo web.
          </div>
       </div>
 
-      <div class="espaciado"></div>
-    </div>
+      <div class="e50"></div>
+    </div> <!--- end baner subject -->
 
 
     <div class="col-12 col-xl-9">
       <div class="container">
         <div class="e30"></div>
+
+        <h1>  {{evalx}}   </h1>
+        <style media="screen">
+          .item{height:{{evalx.0}}  }
+        </style>
+
+
         <div class="row">
 
           {% for proyecto in projectlistx %}
@@ -114,7 +121,9 @@
                 <span class="type_project"> {{proyecto.category}} </span>
               </div>
 
-              <div class="item_img item_img_height fotoc1">  </div>
+              <a href="getproject/{{proyecto.id}}">
+                <div class="item_img item_img_height fotoc1">  </div>
+                </a>
 
               <div class="item_container text-center">
                 <h6 class=" item_title ">{{proyecto.title}} </h6>

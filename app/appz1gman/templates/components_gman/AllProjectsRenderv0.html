@@ -1,0 +1,139 @@
+{% load static %}
+
+<style media="screen">
+
+  @media (max-width:640px) {
+    .item_img_height{height:200px}
+    .item{height:360px; margin-bottom:20px}
+    #banner_subject{height:auto}
+  }
+
+  @media (min-width: 640px) and (max-width:830px) {
+    .item_img_height{height:200px}
+    .item{height:360px;margin-bottom:20px}
+    #banner_subject{height:auto}
+  }
+
+  @media (min-width:831px) and (max-width:950px) {
+    .item_img_height{height:200px}
+    .item{height:360px;margin-bottom:30px}
+    #banner_subject{height:auto}
+  }
+
+  @media (min-width:951px) and (max-width:1228px) {
+    .item_img_height{height:150px}
+    .item{height:360px;margin-bottom:20px}
+    #banner_subject{height:auto}
+  }
+
+  @media (min-width:1229px) and (max-width:1399px) {
+    .item_img_height{height:150px}
+    .item{height:400px;margin-bottom:20px}
+    #banner_subject{height:auto}
+  }
+
+  @media (min-width:1400px) {
+    .item_img_height{height:150px}
+    .item{height:350px; margin-bottom:20px}
+    #banner_subject{height:auto}
+  }
+
+  .item_topbanner{background-color:#6CB8F6; height:50px}
+  .item_font_topbanner{color:white; padding-top:3px}
+  .item_container{
+    border: 2px solid #D4D8DB;
+    background-color:white;
+    color:black;}
+
+    @font-face {
+      font-family: gman;
+      src: url({% static 'fonts/Roboto-Bolditalic.ttf' %} );
+    }
+
+    @font-face {
+      font-family: gman2;
+      src: url({% static 'fonts/Roboto-Light.ttf' %} );
+    }
+
+  .item_img{margin-left:auto; margin-right:auto; background-size:cover;}
+
+  .fotoc1{background-image: url("{% static 'testimg.jpg'%}")}
+  .fotoc2{background-image: url("{%static 'img/c2-coolcards/lottery.jpg'%}")}
+  .fotoc3{background-image: url("{%static 'img/c2-coolcards/mysteries.jpg'%}")}
+  .espaciado{height:50px}
+
+
+  #banner_subject{background-color: #4B89AD;}
+
+  #text_content{margin-top:20px; width:250px; color:white}
+  .foto{width:180px; height:180px; background-color:white}
+  .text1{font-size:20px; font-family: 'gman';}
+  .text2{font-size:15px; font-family: 'Roboto';}
+  .text3{font-size:15px; font-family: 'Roboto';}
+
+  .item_title{margin:10px 10px 0px 10px;font-size:14px; font-family: 'gman';}
+  .item_description{margin:10px 10px 10px 10px; font-size:13px;}
+
+  .type_project{font-size:20px; font-family: 'Roboto';}
+
+</style>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div id="banner_subject" class="col-12 col-xl-3">
+
+      <div class="e50"></div>
+
+      <div class=" centradox foto rounded-circle"></div>
+
+      <div id="text_content" class=" centradox ">
+        <div class="text-center  text_gman_20"> Carlos Adame Cuevas</div>
+        <div class="text-center text_roboto_15"> Ingeniero de proyectos en Lamosa</div>
+        <div class="text-center text_roboto_15">
+          Intereses: Automatizacion, Control de procesos,
+          Innovacion, Electronica, Desarrollo web.
+         </div>
+      </div>
+
+      <div class="e50"></div>
+    </div> <!--- end baner subject -->
+
+
+    <div class="col-12 col-xl-9">
+      <div class="container">
+        <div class="e30"></div>
+
+        <h1>  {{evalx.1}}   </h1>
+
+
+        <div class="row">
+
+          {% for proyecto in projectlistx %}
+
+          <div class="item col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="rounded-top item_topbanner">
+              <div class="centradox item_font_topbanner text-center">
+                <span class="type_project"> {{proyecto.category}} </span>
+              </div>
+
+              <a href="getproject/{{proyecto.id}}">
+                <div class="item_img item_img_height fotoc1">  </div>
+                </a>
+
+              <div class="item_container text-center">
+                <h6 class=" item_title ">{{proyecto.title}} </h6>
+                <div class="item_description "> {{proyecto.description}} </div>
+              </div>
+            </div> <!--end row top banner-->
+          </div> <!--end item 1-->
+
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+
+  </div> <!---end main row ---->
+</div> <!---end main container fluid ---->

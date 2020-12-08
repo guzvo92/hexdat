@@ -1,0 +1,170 @@
+{% load static %}
+
+<style media="screen">
+
+  @media (max-width:640px) {
+    .item_img_height{height:200px}
+    #banner_subject{height:auto}
+  }
+
+  @media (min-width: 640px) and (max-width:830px) {
+    .item_img_height{height:200px}
+    #banner_subject{height:auto}
+  }
+
+  @media (min-width:831px) and (max-width:950px) {
+    .item_img_height{height:200px}
+    #banner_subject{height:auto}
+  }
+
+  @media (min-width:951px) and (max-width:1228px) {
+    .item_img_height{height:150px}
+    #banner_subject{height:auto}
+  }
+
+  @media (min-width:1229px) and (max-width:1399px) {
+    .item_img_height{height:300px}
+    #banner_subject{height:auto}
+  }
+
+  @media (min-width:1400px) {
+    .item_img_height{height:300px}
+    #banner_subject{height:auto}
+  }
+
+  .item_topbanner{background-color:#6CB8F6; height:50px}
+  .item_font_topbanner{color:white; padding-top:3px}
+  .item_container{
+    border: 2px solid #D4D8DB;
+    background-color:white;
+    color:black;}
+
+  @font-face {
+    font-family: gman;
+    src: url({% static 'fonts/Roboto-Bolditalic.ttf' %} );
+    }
+
+  @font-face {
+    font-family: gman2;
+    src: url({% static 'fonts/Roboto-Light.ttf' %} );
+    }
+
+  #banner_subject{background-color: #4B89AD;}
+  #text_content{margin-top:20px; width:250px; color:white}
+  .foto{width:180px; height:180px; background-color:white}
+  .type_project{font-size:20px; font-family: 'Roboto';}
+
+  .item_img{margin-left:auto; margin-right:auto; background-size:cover;}
+
+  .rolview{height:120px;margin-top:20px;}
+  .rolview_item_img{height:90px}
+
+  .minibox{ height:70px; margin-top:10px; background-size:cover;}
+  .img1{background-image: url("{{projectx.image1.url}}");}
+  .img2{background-image:url("{{projectx.mainimage.url}}");}
+  .img3{background-image: url("{{projectx.image2.url}}");}
+
+  </style>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    console.log("jquery cargado");
+
+    //$("#caja").css("background","green");
+    //var mainimg = $('#mainimg')
+
+    $('#img1').click(function(){
+      $('#mainimg').addClass('img1');
+      $('#mainimg').removeClass('img2');
+      $('#mainimg').removeClass('img3');
+    });
+
+    $('#img2').click(function(){
+      $('#mainimg').addClass('img2');
+      $('#mainimg').removeClass('img1');
+      $('#mainimg').removeClass('img3');
+    });
+
+    $('#img3').click(function(){
+      $('#mainimg').addClass('img3');
+      $('#mainimg').removeClass('img1');
+      $('#mainimg').removeClass('img2');
+    });
+
+
+  });
+</script>
+
+<div class="container-fluid">
+  <div class="row">
+    <div id="banner_subject" class="col-12 col-xl-3">
+
+      <div class="e50"></div>
+
+      <div class=" centradox foto rounded-circle"></div>
+
+      <div id="text_content" class=" centradox ">
+        <div class="text-center  text_gman_20"> Carlos Adame Cuevas</div>
+        <div class="text-center text_roboto_15"> Ingeniero de proyectos en Lamosa</div>
+        <div class="text-center text_roboto_15">
+          Intereses: Automatizacion, Control de procesos,
+          Innovacion, Electronica, Desarrollo web.
+         </div>
+      </div>
+
+      <div class="e50"></div>
+    </div> <!--- end baner subject -->
+
+
+    <div class="col-12 col-xl-9">
+      <div class="container">
+        <div class="e30"></div>
+        <div class="row red">
+
+          <div class="col-md-6 col-12 green">
+
+              <div id="mainimg" class="img1 item_img item_img_height">
+
+              </div>
+
+              <div class="rolview green">
+                <div class="container-fluid">
+
+                    <div class="row">
+                      <div class=" col red rolview_item_img">
+                          <div id="img1" class="img1 minibox"></div>
+                      </div>
+
+                      <div class="col red rolview_item_img">
+                          <div id="img2" class="img2 minibox"></div>
+                      </div>
+
+                      <div class="col red rolview_item_img">
+                          <div id="img3" class="img3 minibox"></div>
+                      </div>
+
+                    </div>
+                  </div>
+              </div> <!---end rolview ---->
+
+          </div> <!---end parte de la foto--->
+
+          <div class="col-md-6 col-12 blue">
+
+            <div class="titulos_box">
+              <div class="box_titulo">{{projectx.title}}</div>
+              <div class="e30"></div>
+              <div class="box_description">{{projectx.description}}</div>
+            </div>
+
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+  </div> <!---end main row ---->
+</div> <!---end main container fluid ---->

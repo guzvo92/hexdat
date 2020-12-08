@@ -1,6 +1,16 @@
+@media (max-width:574px){.markquery{background-color: red}}
+@media (min-width: 575px) and (max-width:768px){.markquery{background-color: blue}}
+@media (min-width:769px) and (max-width:950px){.markquery{background-color: yellow}}
+@media (min-width:951px) and (max-width:1228px){.markquery{background-color: green}}
+@media (min-width:1229px) and (max-width:1399px){ .markquery{background-color: orange}}
+/* Medidas arriba de la laptop */
+@media (min-width:1400px) {.markquery{background-color: gray}}
+
 
 .e25{height:25px;}
 .e20{height:20px}
+.e30{height:30px}
+.e50{height:50px}
 
 .green{border: 1px solid green;}
 .red{border: 1px solid red}
@@ -12,26 +22,7 @@
 /* CSS MASTERKEY RESPONSIVE CONTAINER-FLUID/ROW KEY*/
 
 .cuadro{height:90px}
-
-@media (max-width:574px){
-  .markquery{background-color: red}
-}
-
-@media (min-width: 575px) and (max-width:768px){
-  .markquery{background-color: blue}
-}
-
-  @media (min-width:769px) and (max-width:950px){
-  .markquery{background-color: yellow}
-}
-@media (min-width:951px) and (max-width:1228px){
-  .markquery{background-color: green}
-}
- @media (min-width:1229px) and (max-width:1399px){
-   .markquery{background-color: orange}
-}
-
-/* Medidas arriba de la laptop */
-@media (min-width:1400px) {
-  .markquery{background-color: gray}
-}
+.text_gman_20{font-size:20px; font-family: 'gman';}
+.text_gman_15{font-size:15px; font-family: 'gman';}
+.text_roboto_15{font-size:15px; font-family: 'Roboto';}
+.text_roboto_20{font-size:20px; font-family: 'Roboto';}
