@@ -35,17 +35,13 @@ def rowevaluate():
 			R4.append(querycount)
 		conteo += 1
 
-
 	espaciado=130 #porque #caract /= height adecuado
 	try: maxr1 = max(R1) + espaciado
 	except: maxr1 = 0
-
 	try: maxr2 = max(R2) + espaciado
 	except: maxr2 = 0
-
 	try: maxr3 = max(R3) + espaciado
 	except: maxr3 = 0
-
 	try: maxr4 = max(R4) + espaciado
 	except: maxr4 = 0
 
@@ -62,10 +58,11 @@ def rowevaluate():
 def index_gman(request):
 	projectlist = Registroproyecto.objects.all
 	eval = rowevaluate() #paso array con conteos
+	conteo = 0
 
 	return render(
 		request,'index_gman.html',
-		{'projectlistx':projectlist,'evalx':eval}
+		{'projectlistx':projectlist,'evalx':eval,'conteox':conteo}
 	)
 
 def admin_gman(request):

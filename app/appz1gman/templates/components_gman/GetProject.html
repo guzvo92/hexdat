@@ -59,10 +59,16 @@
   .rolview{height:120px;margin-top:20px;}
   .rolview_item_img{height:90px}
 
-  .minibox{ height:70px; margin-top:10px; background-size:cover;}
+  .minibox{ height:70px; margin-top:10px; background-size:cover; border: 2px solid gray}
   .img1{background-image: url("{{projectx.image1.url}}");}
   .img2{background-image:url("{{projectx.mainimage.url}}");}
   .img3{background-image: url("{{projectx.image2.url}}");}
+
+  #textsection{}
+  #txtsec_encabezado{background-color:#6CB8F6; height:50px; color: white}
+  #txtsec_titulos{border: 2px solid gray; background-color:white}
+
+  .txtsec_encabezado_titulo{padding-top:6px}
 
   </style>
 
@@ -120,27 +126,25 @@
     <div class="col-12 col-xl-9">
       <div class="container">
         <div class="e30"></div>
-        <div class="row red">
+        <div class="row">
 
-          <div class="col-md-6 col-12 green">
+          <div class="col-md-6 col-12 ">
 
-              <div id="mainimg" class="img1 item_img item_img_height">
+              <div id="mainimg" class="rounded img1 item_img item_img_height"></div>
 
-              </div>
-
-              <div class="rolview green">
+              <div class="rolview">
                 <div class="container-fluid">
 
                     <div class="row">
-                      <div class=" col red rolview_item_img">
+                      <div class=" col rolview_item_img">
                           <div id="img1" class="img1 minibox"></div>
                       </div>
 
-                      <div class="col red rolview_item_img">
+                      <div class="col rolview_item_img">
                           <div id="img2" class="img2 minibox"></div>
                       </div>
 
-                      <div class="col red rolview_item_img">
+                      <div class="col rolview_item_img">
                           <div id="img3" class="img3 minibox"></div>
                       </div>
 
@@ -150,9 +154,15 @@
 
           </div> <!---end parte de la foto--->
 
-          <div class="col-md-6 col-12 blue">
+          <div id="textsection" class="col-md-6 col-12">
 
-            <div class="titulos_box">
+            <div id="txtsec_encabezado" class="rounded-top">
+              <div class="txtsec_encabezado_titulo text-center">
+                  <h3>{{projectx.category}}</h3>
+              </div>
+            </div>
+
+            <div id="txtsec_titulos" class="titulos_box">
               <div class="box_titulo">{{projectx.title}}</div>
               <div class="e30"></div>
               <div class="box_description">{{projectx.description}}</div>
