@@ -30,13 +30,11 @@
         .container_butform{width:136px;}
     }
 
-  .elementbut{width:360px; height:31px; margin-bottom:10px; margin-top:10px}
+  .elementbut{width:180px; height:31px; margin-bottom:10px; margin-top:10px}
   .element10{width:160px; height:31px; margin-bottom:10px; margin-top:10px}
-
-  .element60{width:360px; height:31px; margin-bottom:10px; margin-top:10px}
-  .element90{width:360px; margin-bottom:10px; margin-top:10px}
-  .container_inputform{width:360px;}
-  .container_selectform{width:180px;}
+  .element30{width:160px; height:31px; margin-bottom:10px; margin-top:10px}
+  .element60{width:160px; height:61px; margin-bottom:10px; margin-top:10px}
+  .container_inputform{width:180px;}
 
 
   .btn{width:120px}
@@ -55,53 +53,61 @@
 
         <div class="col-md-10 col-12">
 
-          <form class="formoney" action="{%url 'save_edit_project' idx=xproject.id%}" method="POST">
+          <form class="formoney" action="{%url 'save_project'%}" method="POST">
               {% csrf_token %}
 
           <div class="container-fluid rounded ">
 
             <div class="rounded-top text-center header_form ">
-              <h3 class="header_form_title">Edita el proyecto:</h3>
+              <h3 class="header_form_title">Agrega un nuevo proyecto:</h3>
             </div>
 
             <div class="row formcontainer">
 
-                  <div class="col-12">
+                  <div class="col-xl-1"></div>
+
+                  <div class="col-12 col-xl-2">
                     <div class="centradox container_inputform">
-                        <input class= "element60" name="newreg_title" value="{{xproject.title}}"> </input>
+                        <input class= "element30" name="newreg_title" placeholder="Titulo: "> </input>
                     </div>
 
                   </div>
 
-                  <div class="col-12">
+                  <div class="col-12 col-xl-3">
                     <div class="centradox centradoy container_inputform">
-                        <textarea class="element90 center" name="newreg_description"
-                        placeholder="Concepto: "rows="5" cols="50" 7
-                        onKeyDown="cuenta()" onKeyUp="cuenta()">{{xproject.description}}
+                        <textarea class="element60 center" name="newreg_description"
+                        placeholder="Concepto: "rows="4">
+                        </textarea>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-xl-3">
+                    <div class="centradox centradoy container_inputform">
+                        <textarea class="element60 center" name="newreg_details"
+                        placeholder="Concepto: " rows="4">
                         </textarea>
                     </div>
                   </div>
 
 
-                  <div class="col-12">
-                    <div class="centradox container_selectform">
+                  <div class="col-12 col-xl-2">
+                    <div class="centradox container_inputform">
                         <select class="center itemsupform element10" name="newreg_categoryselect">
                             {% for val in categoryx %}
-                            <option value="{{xproject.category}}">{{val}}</option>
+                            <option value="{{val}}">{{val}}</option>
                             {% endfor %}
                         </select>
                     </div>
                   </div>
 
 
-                  <div class="col-12 ">
+                  <div class="col-12 col-xl-12">
                     <div class="centradox container_butform">
-                       <button class="btn btn-outline-info btn-sm elementbut" type="submit" name="button">
-                         Grabar
-                       </button>
+                       <button class="btn btn-outline-info btn-sm elementbut" type="submit" name="button">Agregar</button>
                     </div>
                   </div>
 
+                  <div class="col-xl-1"></div>
 
 
 
@@ -115,9 +121,3 @@
         <div class="col-md-1"></div>
     </div>
 </div>
-
-<script>
-function cuenta(){
-       document.forms[0].caracteres.value=document.forms[0].texto.value.length
-}
-</script>
