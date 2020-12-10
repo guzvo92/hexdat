@@ -39,16 +39,6 @@
     background-color:white;
     color:black;}
 
-  @font-face {
-    font-family: gman;
-    src: url({% static 'fonts/Roboto-Bolditalic.ttf' %} );
-    }
-
-  @font-face {
-    font-family: gman2;
-    src: url({% static 'fonts/Roboto-Light.ttf' %} );
-    }
-
   #banner_subject{background-color: #4B89AD;}
   #text_content{margin-top:20px; width:250px; color:white}
   .foto{width:180px; height:180px; background-color:white}
@@ -61,14 +51,26 @@
 
   .minibox{ height:70px; margin-top:10px; background-size:cover; border: 2px solid gray}
   .img1{background-image: url("{{projectx.image1.url}}");}
-  .img2{background-image:url("{{projectx.mainimage.url}}");}
-  .img3{background-image: url("{{projectx.image2.url}}");}
+  .img2{background-image:url("{{projectx.image2.url}}");}
+  .img3{background-image: url("{{projectx.image3.url}}");}
 
   #textsection{}
   #txtsec_encabezado{background-color:#6CB8F6; height:50px; color: white}
-  #txtsec_titulos{border: 2px solid gray; background-color:white}
+  #txtsec_contenido{border: 2px solid gray; background-color:white}
 
   .txtsec_encabezado_titulo{padding-top:6px}
+
+  .box_titulo{padding: 10 20 0 20}
+
+  @font-face {
+    font-family: gman;
+    src: url({% static 'fonts/Roboto-Bolditalic.ttf' %} );
+  }
+
+  @font-face {
+    font-family: gman2;
+    src: url({% static 'fonts/Roboto-Light.ttf' %} );
+  }
 
   </style>
 
@@ -154,18 +156,27 @@
 
           </div> <!---end parte de la foto--->
 
-          <div id="textsection" class="col-md-6 col-12">
+          <div id="txtsec" class="col-md-6 col-12">
 
             <div id="txtsec_encabezado" class="rounded-top">
-              <div class="txtsec_encabezado_titulo text-center">
-                  <h3>{{projectx.category}}</h3>
+              <div class="txtsec_encabezado_titulo container-fluid">
+                <div class="row">
+                    <h3 class="col-10 text-center">{{projectx.category}}</h3>
+                     <div class="col-2">
+                       <a href="/gman"> <img src="{% static 'img/devsyscon.png' %}"> </a>
+                     </div>
+                </div>
+
               </div>
             </div>
 
-            <div id="txtsec_titulos" class="titulos_box">
-              <div class="box_titulo">{{projectx.title}}</div>
-              <div class="e30"></div>
-              <div class="box_description">{{projectx.description}}</div>
+            <div id="txtsec_contenido" class="container-fluid titulos_box">
+              <div class="box_titulo text_gman_20 text-center">{{projectx.title}}</div>
+              <div class="e20"></div>
+              <div class="box_description text_gman_15 text-center">{{projectx.description}}</div>
+              <div class="e20"></div>
+              <div class="box_details">{{projectx.details}}</div>
+              <div class="e20"></div>
             </div>
 
           </div>

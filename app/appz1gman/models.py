@@ -6,8 +6,8 @@ from django.db import models
 class Registroproyecto(models.Model):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=120)
-    category = models.CharField(max_length=50)
-    mainimage = models.ImageField(default='null',upload_to ="projectsgman")
+    details = models.CharField(default='null', max_length=500)
+    category = models.CharField(default='null', max_length=100)
     image1 = models.ImageField(default='null',upload_to ="projectsgman")
     image2 = models.ImageField(default='null',upload_to ="projectsgman")
     image3 = models.ImageField(default='null',upload_to ="projectsgman")

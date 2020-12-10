@@ -21,6 +21,16 @@
 .centradoy{margin-top:auto; margin-bottom:auto}
 /* CSS MASTERKEY RESPONSIVE CONTAINER-FLUID/ROW KEY*/
 
+@font-face {
+  font-family: gman;
+  src: url({% static 'fonts/Roboto-Bolditalic.ttf' %} );
+  }
+
+@font-face {
+  font-family: gman2;
+  src: url({% static 'fonts/Roboto-Light.ttf' %} );
+  }
+
 .cuadro{height:90px}
 .text_gman_20{font-size:20px; font-family: 'gman';}
 .text_gman_15{font-size:15px; font-family: 'gman';}
