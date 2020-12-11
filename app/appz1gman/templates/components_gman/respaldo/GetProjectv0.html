@@ -46,10 +46,10 @@
 
   .item_img{margin-left:auto; margin-right:auto; background-size:cover;}
 
-  .rolview{height:120px;margin-top:20px; }
-  .rolview_item_img{height:90px; padding: 0 10 0 10 ;}
+  .rolview{height:120px;margin-top:20px;}
+  .rolview_item_img{height:90px;}
 
-  .minibox{ height:50px; width:70px;  margin-top:10px; background-size:cover; border: 2px solid gray}
+  .minibox{ height:90; margin-top:10px; background-size:cover; border: 2px solid gray}
   .img1{background-image: url("{{projectx.image1.url}}");}
   .img2{background-image:url("{{projectx.image2.url}}");}
   .img3{background-image: url("{{projectx.image3.url}}");}
@@ -129,6 +129,8 @@
 </script>
 
 <div class="container-fluid">
+
+  <div class="e30"></div>
   <div class="row">
     <div id="banner_subject" class="col-12 col-xl-3">
 
@@ -163,31 +165,31 @@
 
                     <div class="row">
                       {%if projectx.image1.url != "/media/null" %}
-                        <div class="centradox  rolview_item_img">
+                        <div class="col  rolview_item_img">
                             <div id="img1" class="img1 minibox"></div>
                         </div>
                       {% endif %}
 
                       {%if projectx.image2.url != "/media/null" %}
-                        <div class="centradox  rolview_item_img">
+                        <div class="col  rolview_item_img">
                             <div id="img2" class="img2 minibox"></div>
                         </div>
                       {% endif %}
 
                       {%if projectx.image3.url != "/media/null" %}
-                        <div class="centradox  rolview_item_img">
+                        <div class="col  rolview_item_img">
                             <div id="img3" class="img3 minibox"></div>
                         </div>
                       {% endif %}
 
                       {%if projectx.image4.url != "/media/null" %}
-                      <div class="centradox  rolview_item_img">
+                      <div class="col  rolview_item_img">
                           <div id="img4" class="img4 minibox"></div>
                       </div>
                       {% endif %}
 
                       {%if projectx.image5.url != "/media/null" %}
-                      <div class="centradox  rolview_item_img">
+                      <div class="col  rolview_item_img">
                           <div id="img5" class="img5 minibox"></div>
                       </div>
                       {% endif %}

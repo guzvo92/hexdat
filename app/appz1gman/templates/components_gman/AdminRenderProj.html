@@ -63,8 +63,10 @@
               "rounded table table-striped table-light">
                 <thead class="thead-light">
                   <tr class="text_titulos_tabla">
+                    <th scope="col ">ID</th>
                     <th class="thcharname " scope="col">Titulo</th>
                     <th scope="col ">Descripcion</th>
+                    <th scope="col ">Detalles</th>
                     <th scope="col ">Categoria</th>
                     <th scope="col ">Creado</th>
                     <th scope="col ">Acciones</th>
@@ -75,8 +77,10 @@
                   {% for proyecto in projectlistx %}
 
                   <tr>
+                    <td>{{proyecto.id}}</td>
                     <th scope="row">{{proyecto.title}}</th>
                     <td>{{proyecto.description}}</td>
+                    <td>{{proyecto.details}}</td>
                     <td>{{proyecto.category}}</td>
                     <td>{{proyecto.created_at}}</td>
                     <td class="linkpath">

@@ -98,51 +98,21 @@ def clear_project(request,idx):
 
 def edit_project(request,idx):
 	reg = Registroproyecto.objects.get(pk=idx)
-
 	return render(
 		request,'edit_gman.html',
 		{'xproject':reg,'categoryx':category}
 	)
 
 def save_edit_project(request,idx):
-	if request.method == 'POST':
-		reg = Registroproyecto.objects.get(pk=idx)
-		registro_title = request.POST['newreg_title']
-		registro_description = request.POST['newreg_description']
-		registro_details = request.POST['newreg_details']
-		registro_category = request.POST['newreg_categoryselect']
+	registro = Registroproyecto.objects.get(pk=idx)
+	registro.title = request.POST['newreg_title']
+	registro.description = request.POST['newreg_description']
+	registro.details = request.POST['newreg_details']
+	registro.category = request.POST['newreg_categoryselect']
+	registro.save()
+	print("Proyecto editado: " + registro.title + "/" +  registro.category )
+	return redirect ('admin_gman')
 
-		registroproyecto = Registroproyecto(
-			id = idx,
-			title = registro_title,
-			description = registro_description,
-			details = registro_details,
-			category = registro_category,
-			)
-		registroproyecto.save()
-		print("Proyecto editado: " + registro_title + "/" +  registro_category )
-		return redirect ('admin_gman')
-
-''' Ejemplo que crea objeto sin fecha por el array
-def save_edit_project(request,idx):
-	if request.method == 'POST':
-		reg = Registroproyecto.objects.get(pk=idx)
-		registro_title = request.POST['newreg_title']
-		registro_description = request.POST['newreg_description']
-		registro_category = request.POST['newreg_categoryselect']
-
-
-		registroproyecto = Registroproyecto(
-			id = idx,
-			title = registro_title,
-			description = registro_description,
-			category = registro_category,
-
-			)
-		registroproyecto.save()
-		print("Nuevo proyecto agregado: " + registro_title + "/" +  registro_category )
-		return redirect ('admin_gman')
-'''
 
 def getproject(request,idx):
     project = Registroproyecto.objects.get(pk=idx)

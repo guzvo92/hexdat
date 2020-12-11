@@ -84,7 +84,7 @@
 
                   <div class="col-12">
                     <div class="centradox centradoy container_inputform">
-                        <textarea class="element90 center" name="newreg_description"
+                        <textarea class="element90 center" name="newreg_details"
                         placeholder="Concepto: "rows="5"
                         onKeyDown="cuenta()" onKeyUp="cuenta()">{{xproject.details}}
                         </textarea>
@@ -96,12 +96,11 @@
                     <div class="centradox container_selectform">
                         <select class="center itemsupform element10" name="newreg_categoryselect">
                             {% for val in categoryx %}
-                            <option value="{{xproject.category}}">{{val}}</option>
+                            <option value="{{val}}">{{val}}</option>
                             {% endfor %}
                         </select>
                     </div>
                   </div>
-
 
                   <div class="col-12 ">
                     <div class="centradox container_butform">
@@ -110,9 +109,6 @@
                        </button>
                     </div>
                   </div>
-
-
-
 
               </div>
             </div>

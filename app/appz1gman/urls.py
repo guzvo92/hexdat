@@ -11,7 +11,7 @@ urlpatterns = [
     path('admin/', views.admin_gman, name="admin_gman"),
     path('save_project/', views.save_project, name="save_project"),
     path('clear_project/<int:idx>', views.clear_project, name="clear_project"),
-    path('edit_project/<int:idx>', views.edit_project, name="edit_project"),
+    path('admin/edit_project/<int:idx>', views.edit_project, name="edit_project"),
     path('save_edit_project/<int:idx>', views.save_edit_project, name="save_edit_project"),
     path('getproject/<int:idx>', views.getproject, name="getproject"),
 
