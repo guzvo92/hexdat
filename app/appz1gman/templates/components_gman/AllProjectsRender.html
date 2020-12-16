@@ -28,13 +28,13 @@
 
   @media (min-width:1229px) and (max-width:1399px) {
     .item_img_height{height:150px}
-    .item{height:400px;margin-bottom:20px}
+    .item{height:380px;margin-bottom:20px}
     #banner_subject{height:auto}
   }
 
   @media (min-width:1400px) {
     .item_img_height{height:150px}
-    .item{height:350px; margin-bottom:20px}
+    .item{height:380px; margin-bottom:20px}
     #banner_subject{height:auto}
   }
 
@@ -45,7 +45,7 @@
     background-color:white;
     color:black;}
 
-    
+
 
 
     .item_img {
@@ -57,12 +57,7 @@
   #banner_subject{background-color: #4B89AD;}
   #text_content{margin-top:20px; width:250px; color:white}
   .foto{width:180px; height:180px; background-color:white; background-size:cover;}
-    .mainfoto {
-        background-image: url(" {% static '/mainimg.jpg' %}")
-    }
-
-
-
+  .mainfoto {background-image: url(" {% static '/mainimg.jpg' %}")}
   .item_title{margin:10px 10px 0px 10px;}
   .item_description{margin:10px 10px 10px 10px; font-size:13px;}
 
@@ -75,17 +70,13 @@
     font-family: gman2;
     src: url({% static 'fonts/Roboto-Light.ttf' %} );
     }
-
 </style>
-
-
 
 <div class="container-fluid">
   <div class="row">
     <div id="banner_subject" class="col-12 col-xl-3">
 
       <div class="e50"></div>
-
       <div class=" centradox foto mainfoto rounded-circle"></div>
 
       <div id="text_content" class=" centradox ">
@@ -107,14 +98,12 @@
 
         <div class="row">
 
-
           {% for proyecto in projectlistx %}
-
 
           <div class="item col-12 col-md-6 col-lg-4 col-xl-3">
             <div class="rounded-top item_topbanner">
               <div class="centradox item_font_topbanner text-center">
-                <span class="text_roboto_20"> {{proyecto.category}} </span>
+                <span class="text_roboto_15"> {{proyecto.category}} </span>
               </div>
 
               <a href="getproject/{{proyecto.id}}">
