@@ -3,10 +3,10 @@ from django.shortcuts import render, HttpResponse, redirect
 from .models import *
 
 category = (
-('Electronica'),
 ('Redes'),
 ('Automatizacion'),
-('Desarrollo web')
+('Desarrollo sotware'),
+('Electronica & Raspberry')
 )
 
 #Escencialmemte es para evaluar el # de caract de cada item de registroproyecto
@@ -117,6 +117,6 @@ def save_edit_project(request,idx):
 def getproject(request,idx):
     project = Registroproyecto.objects.get(pk=idx)
     return render(
-		request,'view_Project_gman.html',
+		request,'get_Project_gman.html',
 		{'projectx':project,}
 	)

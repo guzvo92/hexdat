@@ -5,7 +5,7 @@ from django.db import models
 
 class Registroproyecto(models.Model):
     title = models.CharField(max_length=60)
-    description = models.CharField(max_length=130)
+    description = models.CharField(max_length=150)
     details = models.CharField(default='null', max_length=500)
     category = models.CharField(default='null', max_length=100)
     image1 = models.ImageField(default='null',upload_to ="projectsgman")
