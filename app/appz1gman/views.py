@@ -5,7 +5,7 @@ from .models import *
 category = (
 ('Redes'),
 ('Automatizacion'),
-('Desarrollo sotware'),
+('Desarrollo & Software'),
 ('Electronica & Raspberry')
 )
 
