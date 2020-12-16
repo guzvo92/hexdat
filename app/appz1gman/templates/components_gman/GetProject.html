@@ -6,35 +6,41 @@
     .item_img_height{height:200px}
     #banner_subject{height:auto}
     .rolview {height: 180px;}
+    #buttonhomegetproy{margin-top:30px}
   }
 
   @media (min-width: 640px) and (max-width:830px) {
-    .item_img_height{height:200px}
+    .item_img_height{height:300px}
     #banner_subject{height:auto}
+    #buttonhomegetproy{margin-top:30px}
   }
 
   @media (min-width:831px) and (max-width:950px) {
-    .item_img_height{height:200px}
+    .item_img_height{height:300px}
     #banner_subject{height:auto}
     .rolview {height: 120px;}
+    #buttonhomegetproy{margin-top:30px}
   }
 
   @media (min-width:951px) and (max-width:1228px) {
-    .item_img_height{height:150px}
+    .item_img_height{height:300px}
     #banner_subject{height:auto}
-    .rolview {height: 120px;}
+    .rolview {height: 80px;}
+    #buttonhomegetproy{margin-top:30px}
   }
 
   @media (min-width:1229px) and (max-width:1399px) {
     .item_img_height{height:300px}
     #banner_subject{height:auto}
-    .rolview {height: 120px;}
+    .rolview {height: 80px;}
+    #buttonhomegetproy{margin-top:30px}
   }
 
   @media (min-width:1400px) {
     .item_img_height{height:300px}
     #banner_subject{height:auto}
-    .rolview {height: 120px;}
+    .rolview {height: 80px;}
+    #buttonhomegetproy{margin-top:0px}
   }
 
   .item_topbanner{background-color:#6CB8F6; height:50px}
@@ -47,14 +53,10 @@
   #banner_subject{background-color: #4B89AD;}
   #text_content{margin-top:20px; width:250px; color:white}
   .foto{width:180px; height:180px; background-color:white; background-size:cover;}
-  .mainfoto {
-     background-image: url(" {% static '/mainimg.jpg' %}")
-  }
+  .mainfoto {background-image: url(" {% static '/mainimg.jpg' %}")}
 
   .type_project{font-size:20px; font-family: 'Roboto';}
-
   .item_img{margin-left:auto; margin-right:auto; background-size:cover;}
-
   .rolview{margin-top:20px; }
   .rolview_item_img{height:90px; padding: 0 10 0 10 ;}
 
@@ -68,9 +70,7 @@
   #textsection{}
   #txtsec_encabezado{background-color:#6CB8F6; height:50px; color: white}
   #txtsec_contenido{border: 2px solid gray; background-color:white}
-
   .txtsec_encabezado_titulo{padding-top:6px}
-
   .box_titulo{padding: 10 20 0 20}
 
   @font-face {
@@ -82,6 +82,9 @@
     font-family: gman2;
     src: url({% static 'fonts/Roboto-Light.ttf' %} );
   }
+
+  .navbuttons{width:80px}
+
 
   </style>
 
@@ -161,6 +164,7 @@
     <div class="col-12 col-xl-9">
       <div class="container">
         <div class="e30"></div>
+
         <div class="row">
 
           <div class="col-md-6 col-12 ">
@@ -171,6 +175,7 @@
                 <div class="container-fluid">
 
                     <div class="row">
+
                       {%if projectx.image1.url != "/media/null" %}
                         <div class="centradox  rolview_item_img">
                             <div id="img1" class="img1 minibox"></div>
@@ -211,10 +216,7 @@
             <div id="txtsec_encabezado" class="rounded-top">
               <div class="txtsec_encabezado_titulo container-fluid">
                 <div class="row">
-                    <h3 class="col-10 text-center">{{projectx.category}}</h3>
-                     <div class="col-2">
-                       <a href="/gman"> <img src="{% static 'img/devsyscon.png' %}"> </a>
-                     </div>
+                    <h3 class="col-12 text-center">{{projectx.category}}</h3>
                 </div>
 
               </div>
@@ -232,6 +234,19 @@
           </div>
 
 
+
+        </div> <!--end Mainrow--->
+        <div id="navegacioninferior" class="row">
+
+              <div class="col-12 centradox">
+                <div class="centradox navbuttons">
+
+                <a href="/gman">
+                <button id="buttonhomegetproy" class="btn btn-outline-info btn-md" type="submit" name="button">Home</button>
+                </a>
+
+                </div>
+              </div>
 
         </div>
       </div>
