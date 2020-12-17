@@ -147,7 +147,7 @@ def edit_project(request,idx):
 	)
 
 def save_edit_project(request,idx):
-	registro = FinalRegistroproyecto.objects.get(num=idx)
+	registro = Registroproyecto.objects.get(id=idx)
 	registro.title = request.POST['newreg_title']
 	registro.description = request.POST['newreg_description']
 	registro.details = request.POST['newreg_details']
