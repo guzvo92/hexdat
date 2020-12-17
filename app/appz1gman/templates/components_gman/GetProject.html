@@ -83,8 +83,8 @@
     src: url({% static 'fonts/Roboto-Light.ttf' %} );
   }
 
-  .navbuttons{width:80px}
-  .e21{eede}
+  .navbuttons{width:200px}
+
 
 
   </style>
@@ -242,8 +242,16 @@
               <div class="col-12 centradox">
                 <div class="centradox navbuttons">
 
+                <a href="/gman/getproject/{{projectx.prev}}">
+                  <button id="buttonhomegetproy" class="btn btn-outline-info btn-md" type="submit" name="button">Prev</button>
+                </a>
+
                 <a href="/gman">
-                <button id="buttonhomegetproy" class="btn btn-outline-info btn-md" type="submit" name="button">Home</button>
+                  <button id="buttonhomegetproy" class="btn btn-outline-info btn-md" type="submit" name="button">Home</button>
+                </a>
+
+                <a href="/gman/getproject/{{projectx.next}}">
+                  <button id="buttonhomegetproy" class="btn btn-outline-info btn-md" type="submit" name="button">Next</button>
                 </a>
 
                 </div>
