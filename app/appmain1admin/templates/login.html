@@ -1,0 +1,28 @@
+<style>
+    .formsec {
+        width: 200px
+    }
+
+    .red {
+        border: 2px solid red
+    }
+</style>
+
+
+<div class="red formsec">
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label for="username"> Nombre de usuario: </label>
+        <input type="text" name="username" value="" />
+
+        <label for="password"> Password: </label>
+        <input type="password" name="password" value="" />
+
+        <input type="submit" value="Entrar" />
+    </form>
+
+
+
+</div>

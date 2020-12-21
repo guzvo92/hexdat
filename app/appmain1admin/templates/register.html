@@ -1,0 +1,26 @@
+<style>
+    .formsec{width:200px}
+    .red { border: 2px solid red}
+
+</style>
+
+
+<div class="red formsec">
+
+    <form class="" method="post">
+        {% csrf_token %}
+
+        {% for field in registerformg %}
+        {{field.label}}
+        {{field}}
+
+        {% endfor %}
+
+        <input type="submit" value="Registrate" />
+
+    </form>
+
+
+</div>
+
+

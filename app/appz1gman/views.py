@@ -101,16 +101,16 @@ def index_gman(request):
 
 def getproject(request,idx):
 	#recordar que num no es el pk la db que uso es la recorrida
-    project = FinalRegistroproyecto.objects.get(num=idx)
-    return render(
+	project = FinalRegistroproyecto.objects.get(num=idx)
+	return render(
 		request,'get_Project_gman.html',
 		{'projectx':project,}
 	)
 
 
 def admin_gman(request):
-    projectlist = Registroproyecto.objects.all
-    return render(
+	projectlist = Registroproyecto.objects.all
+	return render(
 		request,'admin_gman.html',
 		{'projectlistx':projectlist,'categoryx':category}
 	)

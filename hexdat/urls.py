@@ -21,6 +21,7 @@ urlpatterns = [
     path('', include('app.appmain0core.urls')),
     path('mon/', include('app.appx1moneytrack.urls')),
     path('gman/', include('app.appz1gman.urls')),
+    path('masteradmin/', include('app.appmain1admin.urls')),
 
 ]
 
