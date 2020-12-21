@@ -18,8 +18,8 @@ def register_page(request):
 		if register_form.is_valid():
 			register_form.save()
 			return redirect ('register')
-	
-	return render (request, 'register.html', 
+
+	return render (request, 'register.html',
 			{'registerformg': registerformx})
 
 
@@ -35,12 +35,21 @@ def login_page(request):
 		if user is not None:
 			login(request,user)
 			return redirect ('profile' )
-		
+
 	return render (request, 'login.html')
 
 
 
 def profile_page(request):
 
-	return render (request, 'profile.html')
+	if request.method == 'POST':
+		registro_title = request.POST.get('title')
+		registronota = Nota(
+			title = registro_title,
+			)
+		registronota.save()
 
+
+
+
+	return render (request, 'profile.html')

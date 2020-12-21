@@ -5,3 +5,29 @@ Perfil activo:
 <h1>{{request.user.first_name}}</h1>
 <h1>{{request.user.email}}</h1>
 
+
+<style>
+    .formsec {
+        width: 200px
+    }
+
+    .red {
+        border: 2px solid red
+    }
+</style>
+
+
+<div class="red formsec">
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label for="username"> Titulo </label>
+        <input type="text" name="title" value="" />
+
+        <input type="submit" value="Entrar" />
+    </form>
+
+
+
+</div>
