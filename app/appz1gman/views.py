@@ -9,56 +9,12 @@ category = (
 ('Electronica & Raspberry')
 )
 
-#Escencialmemte es para evaluar el # de caract de cada item de registroproyecto
-# los divide x renglon de 4 items
-def rowevaluate():
-	conteo = 1
-	arraylens = []
-	total = Registroproyecto.objects.count()
-
-	R1 = []
-	R2 = []
-	R3 = []
-	R4 = []
-
-	for x in Registroproyecto.objects.all():
-		querycount = len(x.description)
-		divisor = conteo/4
-
-		if divisor <= 1:
-			R1.append(querycount)
-		if divisor > 1 and divisor <= 2:
-			R2.append(querycount)
-		if divisor > 2 and divisor <= 3:
-			R3.append(querycount)
-		if divisor > 3 and divisor <= 4:
-			R4.append(querycount)
-		conteo += 1
-
-	espaciado=130 #porque #caract /= height adecuado
-	try: maxr1 = max(R1) + espaciado
-	except: maxr1 = 0
-	try: maxr2 = max(R2) + espaciado
-	except: maxr2 = 0
-	try: maxr3 = max(R3) + espaciado
-	except: maxr3 = 0
-	try: maxr4 = max(R4) + espaciado
-	except: maxr4 = 0
-
-	print("[R1]" + str(R1) + " [MAX] = "+ str(maxr1))
-	print("[R2]" + str(R2) + " [MAX] = "+ str(maxr2))
-	print("[R3]" + str(R3) + " [MAX] = "+ str(maxr3))
-	print("[R4]" + str(R4) + " [MAX] = "+ str(maxr4))
-
-	maxarray = [ maxr1, maxr2, maxr3, maxr4]
-	return maxarray
-
-#eval = rowevaluate() #paso array con conteos de renglon YA NO SE USO
 
 def index_gman(request):
 	projectlist1 = Registroproyecto.objects.all()
 	db1 = Registroproyecto.objects.count()
-	db2 = FinalRegistroproyecto.objects.count()
+	db2 = FinalRegistroproyecto.objects.count() 
+	#se borra y cuenta desde 1 si hay diferencias #proyectos
 	conteo = 1
 
 	if db1 != db2:
@@ -155,3 +111,53 @@ def save_edit_project(request,idx):
 	registro.save()
 	print("Proyecto editado: " + registro.title + "/" +  registro.category )
 	return redirect ('admin_gman')
+
+
+from django.views import View
+from django.http import JsonResponse
+from django.forms.models import model_to_dict
+
+class ApiListView(View):
+	def get(self, request):
+		if('xtitle' in request.GET):
+			#//Si el parametro ?title esta en el get tomalo y filtra ese valor
+			GList = FinalRegistroproyecto.objects.filter(title__contains=request.GET['xtitle'])
+		else:
+			GList = FinalRegistroproyecto.objects.all()
+			#//Se parsean los valores del queryset GList por casteo a una lista
+		return JsonResponse(list(GList.values()), safe=False)
+
+class ApiDetailView(View):
+	def get(self, request, num):
+		Gobject = FinalRegistroproyecto.objects.get(num=num)
+		#//Se parsean los valores del queryset Gobject por diccionario
+		Gobject_dict = model_to_dict(Gobject)
+		
+		#//agregamos este for porque al agregar una imagen en un diccionario
+		#//me marca un error el JsonResponse diciendo que no puede serializar img
+		#buscare cada item de imagen y lo hare string	
+		for x in Gobject_dict:
+			print()
+			#//buscamos items con la palabra imagen
+			if x.find("image") == 0: #lospositivos valen cero
+				Val_Ser =  str(Gobject_dict[x]) #//obtener valor y parsealos a string
+				Gobject_dict.update({x:Val_Ser}) #//Sustituyelo x valornvo
+
+		#print(Gobject_dict)	
+		return JsonResponse(Gobject_dict,safe=False)
+		
+
+from datetime import datetime, timedelta
+tiemponow = (datetime.today()).strftime("[%Y-%m-%d] [%H.%M]")
+
+def downloadapi(request):
+	filename = "gmandb " + str(tiemponow)+ ".json"
+	GList = FinalRegistroproyecto.objects.all()
+	content = JsonResponse(list(GList.values()), safe=False)
+	response = HttpResponse(content, content_type='text/plain') #//Render
+	
+   #// Esto me descarga el txt se edita el header Content-disposition
+	response['Content-Disposition'] = 'attachment; filename={0}'.format(filename)
+	return response
+
+

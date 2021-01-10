@@ -3,12 +3,13 @@
     "",
     "\\app",
     "\\app\\appmain0core\\templates",
-    "\\app\\appmain1admin",
-    "\\app\\appx1moneytrack",
-    "\\app\\appx1moneytrack\\templates",
-    "\\app\\appx1moneytrack\\templates\\components_moneytrack",
+    "\\app\\appmain1admin\\templates",
+    "\\app\\appmain1registration",
+    "\\app\\appmain1registration\\templates",
+    "\\app\\appmain1registration\\templates\\registration",
+    "\\app\\appz1gman\\templates",
     "\\hexdat"
   ],
-  "SelectedNode": "\\hexdat\\settings.py",
+  "SelectedNode": "\\app\\appmain1registration\\templates\\registration\\login.html",
   "PreviewInSolutionExplorer": false
 }

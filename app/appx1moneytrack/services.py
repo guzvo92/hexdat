@@ -1,3 +1,5 @@
+
+#En los servicios estan todas las funciones no procesadas en views
 from .models import *
 
 def totalgastosPublic():
