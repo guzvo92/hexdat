@@ -33,3 +33,10 @@ class FinalRegistroproyecto(models.Model):
     image3 = models.ImageField(default='null',upload_to ="projectsgman")
     image4 = models.ImageField(default='null',upload_to ="projectsgman")
     image5 = models.ImageField(default='null',upload_to ="projectsgman")
+
+
+class Apiuploadmod(models.Model):
+    title = models.CharField(max_length=100)
+    file = models.FileField(upload_to="gmanuploads/", blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, editable=False )
+    #image = forms.ImageField()

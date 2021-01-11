@@ -160,4 +160,15 @@ def downloadapi(request):
 	response['Content-Disposition'] = 'attachment; filename={0}'.format(filename)
 	return response
 
+from django.shortcuts import render
+from .forms import UploadDocumentForm
 
+def uploadapi(request):
+	formG = UploadDocumentForm()
+	if request.method == 'POST':
+		form = UploadDocumentForm(request.POST, request.FILES)  
+		if form.is_valid():
+			form.save()
+
+	#renderiza pero si te llega un post de aqui haz lo del IF
+	return render(request, 'upload_gman.html', locals())

@@ -1,0 +1,37 @@
+<html>
+
+<style>
+    .sectform{border: 2px solid red; width:400px}
+    .e30{height:30px}
+    .e10{height:10px}
+    .e20{height:20px}
+</style>
+
+<h1>File Uploads</h1>
+<div class="e20"></div>
+<body>
+
+    <div class="sectform">
+        <!-- Para imagenes enctype="multipart/form-data" -->
+        <form enctype="multipart/form-data" action="" method="post">
+
+            {% csrf_token %}
+
+
+            {% for x in formG %}
+
+                {{x.label}}
+                <div class="e10"></div>
+                {{x}}
+                <div class="e20"></div>
+
+            {% endfor %}
+
+            
+
+            <input type="submit" value="Save">
+        </form>
+        </div>
+
+    </body>
+    </html>

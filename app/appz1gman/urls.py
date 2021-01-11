@@ -19,5 +19,6 @@ urlpatterns = [
     path('api/', ApiListView.as_view(), name="GList"),
     path('api/<int:num>', ApiDetailView.as_view(), name="GList"),
     path('api/download', views.downloadapi, name="downloadapi"),
+    path('api/upload', views.uploadapi, name="uploadapi")
 
 ]
