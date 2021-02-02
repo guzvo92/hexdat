@@ -16,6 +16,7 @@ urlpatterns = [
     path('masteradmin/', include('app.appmain1admin.urls')),
     path ('accounts/', include ('django.contrib.auth.urls')),
     path ('accounts/', include ('app.appmain1registration.urls')),
+    path ('projects/', include ('app.appz0projects.urls')),
 
 ]
 

@@ -71,7 +71,7 @@ def admin_gman(request):
 		{'projectlistx':projectlist,'categoryx':category}
 	)
 
-#formoney para el nuevo registro del gasto
+
 def save_project(request):
 	if request.method == 'POST':
 		registro_title = request.POST['newreg_title']

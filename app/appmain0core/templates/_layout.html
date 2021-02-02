@@ -2,25 +2,47 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<style>
+	.navbar-nav{color:black}
+</style>
+<head>
 	<!--utf es para las comillas y las ñ-->
 	<meta charset="utf-8">
 
-		{% include 'zC0_staticimports.html' %}
-	  <!--no olvidar que con boostrap hay que usar siempre con-fluid/row -->
-	  <!-- aunque embebas varias veces la estructura-->
-
-		{% block import %}  {% endblock %}
+	{% include 'zC0_staticimports.html' %}
+	<!--no olvidar que con boostrap hay que usar siempre con-fluid/row -->
+	<!-- aunque embebas varias veces la estructura-->
+	{% block import %}  {% endblock %}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="icon" href="{%static 'img/devsyscon.png' %}" />
 
+	<div class="e50"></div>
+	<div class="e50"></div>
+
+	<ul class="navbar-nav">
+		{% if not request.user.is_authenticated %}
+		<li class="nav-item">
+			<a href="{% url 'signup' %}" class="nav-link"> Registrate </a>
+		</li>
+
+		<li class="nav-item">
+			<a href="{% url 'login' %}" class="nav-link"> Accede </a>
+		</li>
+		{% else %}
+
+		<li class="nav-item">
+			<a href="{% url 'logout' %}" class="nav-link"> Salir </a>
+		</li>
+		{% endif %}
+	</ul>
 
 	<title>
 		{% block title %} {% endblock %}
 	</title>
-  </head>
+</head>
 
   <body>
 	{% include 'zC1_navbar.html' %}

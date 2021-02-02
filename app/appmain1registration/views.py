@@ -1,13 +1,13 @@
 
 #views.py [appmain1registration]
 
-
-
-#form generico
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView
-from django.urls import reverse_lazy
-
+from django.views.generic.edit import UpdateView
+from django.urls import reverse_lazy,reverse
+from .models import Profile
 from django import forms
 
 class SignUpView(CreateView):
@@ -24,12 +24,32 @@ class SignUpView(CreateView):
     def get_form(selft, form_class=None):
         form = super(SignUpView, selft).get_form()
         #modificar en tiempo real
+        
         form.fields['username'].widget = forms.TextInput(attrs={'class':'form-control mb-2', 'placeholder':'Nombre de usuario'})
         form.fields['password1'].widget = forms.TextInput(attrs={'class':'form-control mb-2', 'placeholder':'Password'})
         form.fields['password2'].widget = forms.TextInput(attrs={'class':'form-control mb-2', 'placeholder':'Repite el Password'})
         #//puedes esconder las labels asi o editando el css en html label:display:none
         #form.fields['username'].label =""
         return form
+
+    
+#se actualizan los fields targeteando USER del get_object
+@method_decorator(login_required, name='dispatch')
+class ProfileUpdate(UpdateView):
+    fields = [ 'avatar','bio','link'] #//del form.as_p
+    template_name ='registration/profileform.html'
+    success_url = reverse_lazy('profile')
+
+    #este metodo es usado para extraer el USER que viende dentro de la request
+    #//podemos saber el id del usuario sin pasarlo en el path
+    def get_object(self): #//las updateview tienen metodo llamado getobject
+        profile, created = Profile.objects.get_or_create(user=self.request.user)
+        #//este return me regresa una tupla (profile,created=tupla)
+        print(profile.username)
+        return profile
+
+
+
 
 
 

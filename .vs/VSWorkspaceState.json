@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\appmain0core",
     "\\app\\appmain0core\\templates",
     "\\app\\appmain1admin\\templates",
     "\\app\\appmain1registration",
     "\\app\\appmain1registration\\templates",
     "\\app\\appmain1registration\\templates\\registration",
-    "\\app\\appz1gman\\templates",
+    "\\app\\appx1moneytrack",
     "\\hexdat"
   ],
-  "SelectedNode": "\\app\\appmain1registration\\templates\\registration\\login.html",
+  "SelectedNode": "\\app\\appmain1registration\\views.py",
   "PreviewInSolutionExplorer": false
 }
