@@ -1,0 +1,28 @@
+{% extends '_layout.html' %}
+{% load static %}
+{% block title %}Perfil{% endblock %}
+{% block content %}
+
+<main role="main">
+    <div class="container">
+        <div class="row mt-3 mb-5">
+            <div class="col-md-9 mx-auto">
+                <div>
+                    <p><h5>Bio:</h5> {{request.user.profile.bio}}</p>
+
+
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <table>
+                            {{ form.as_p }}
+                        </table>
+                        <br>
+                        <input type="submit" class="btn btn-primary btn-block"
+                               value="Actualizar" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -22,23 +22,6 @@
 	<div class="e50"></div>
 	<div class="e50"></div>
 
-	<ul class="navbar-nav">
-		{% if not request.user.is_authenticated %}
-		<li class="nav-item">
-			<a href="{% url 'signup' %}" class="nav-link"> Registrate </a>
-		</li>
-
-		<li class="nav-item">
-			<a href="{% url 'login' %}" class="nav-link"> Accede </a>
-		</li>
-		{% else %}
-
-		<li class="nav-item">
-			<a href="{% url 'logout' %}" class="nav-link"> Salir </a>
-		</li>
-		{% endif %}
-	</ul>
-
 	<title>
 		{% block title %} {% endblock %}
 	</title>

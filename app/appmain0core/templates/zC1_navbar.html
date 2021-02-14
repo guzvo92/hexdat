@@ -10,7 +10,7 @@
 
     .black {background-color: black}
     .navbar {box-shadow: 0px 22px 22px gray;}
-    nav {box-shadow: 0px 16px 22px gray;}
+    .navbar {box-shadow: 0px 16px 22px gray;}
     .nav-item {padding-left: 0px;}
 
     nav ul li a:hover {
@@ -58,6 +58,23 @@
             <li class="nav-item mr-5 ">
                 <a class="nav-link" href="/">Contacto</a>
             </li>
+
+
+          {% if not request.user.is_authenticated %}
+            <li class="nav-item">
+              <a href="{% url 'signup' %}" class="nav-link"> Registrate </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{% url 'login' %}" class="nav-link"> Accede </a>
+            </li>
+          {% else %}
+
+            <li class="nav-item">
+              <a href="{% url 'logout' %}" class="nav-link"> Salir </a>
+            </li>
+          {% endif %}
+
 
         </ul>
 

@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     'django.contrib.auth',
     'app.appmain1registration',
-    'django.contrib.admin',  
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'app.appz1gman',
     'app.appz2denna',
     'app.appz0projects',
+    'app.profiles',
+    'app.messenger',
 ]
 
 MIDDLEWARE = [

@@ -5,7 +5,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView #GEN
 from django.urls import reverse_lazy,reverse
 from .models import Profile
 from django import forms
@@ -24,7 +24,7 @@ class SignUpView(CreateView):
     def get_form(selft, form_class=None):
         form = super(SignUpView, selft).get_form()
         #modificar en tiempo real
-        
+
         form.fields['username'].widget = forms.TextInput(attrs={'class':'form-control mb-2', 'placeholder':'Nombre de usuario'})
         form.fields['password1'].widget = forms.TextInput(attrs={'class':'form-control mb-2', 'placeholder':'Password'})
         form.fields['password2'].widget = forms.TextInput(attrs={'class':'form-control mb-2', 'placeholder':'Repite el Password'})
@@ -32,7 +32,7 @@ class SignUpView(CreateView):
         #form.fields['username'].label =""
         return form
 
-    
+
 #se actualizan los fields targeteando USER del get_object
 @method_decorator(login_required, name='dispatch')
 class ProfileUpdate(UpdateView):
@@ -45,28 +45,5 @@ class ProfileUpdate(UpdateView):
     def get_object(self): #//las updateview tienen metodo llamado getobject
         profile, created = Profile.objects.get_or_create(user=self.request.user)
         #//este return me regresa una tupla (profile,created=tupla)
-        print(profile.username)
+
         return profile
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

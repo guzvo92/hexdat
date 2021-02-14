@@ -4,6 +4,8 @@
 from django.contrib import admin
 from django.urls import path, include
 
+from app.profiles.urls import profiles_patterns
+
 hash_gman = 290792
 hash_denna = 12345678
 
@@ -17,6 +19,7 @@ urlpatterns = [
     path ('accounts/', include ('django.contrib.auth.urls')),
     path ('accounts/', include ('app.appmain1registration.urls')),
     path ('projects/', include ('app.appz0projects.urls')),
+    path ('profiles/', include (profiles_patterns)),
 
 ]
 
