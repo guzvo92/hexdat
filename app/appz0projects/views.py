@@ -15,6 +15,7 @@ from app.appz0projects.models import Project
 from django.urls import reverse_lazy,reverse
 from django import forms
 
+#methods
 #Con esto me crea un RECORD con el USUARIO actual logueado
 #ligado al modelo con una foreing key
 @method_decorator(login_required, name='dispatch')
