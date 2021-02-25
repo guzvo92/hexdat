@@ -1,3 +1,5 @@
+#urls.py profiles
+
 from django.urls import path
 from .views import ProfileListView, ProfileDetailView
 

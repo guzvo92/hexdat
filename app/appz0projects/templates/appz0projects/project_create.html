@@ -1,6 +1,6 @@
 {% extends '_layout.html' %}
 {% load static %}
-{% block title %}Perfil{% endblock %}
+{% block title %}Project{% endblock %}
 {% block content %}
 
 <main role="main">
@@ -8,17 +8,16 @@
         <div class="row mt-3 mb-5">
             <div class="col-md-9 mx-auto">
                 <div>
-                    <p><h5>Bio:</h5> {{request.user.profile.bio}}</p>
-
-
+                    <p>[username]: {{request.user.username}}</p>
+                    <p>[email]: {{request.user.email}}</p>
                     <form action="" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <table>
-                            {{ form.as_p }}
+                            {{ form.as_table }}
                         </table>
                         <br>
                         <input type="submit" class="btn btn-primary btn-block"
-                               value="Actualizar" />
+                               value="Crear proyecto" />
                     </form>
                 </div>
             </div>

@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'app.appz2denna',
     'app.appz0projects',
     'app.profiles',
-    'app.messenger',
+    'messenger',
 ]
 
 MIDDLEWARE = [

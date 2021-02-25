@@ -1,4 +1,3 @@
-
 #views.py [appmain1registration]
 
 from django.utils.decorators import method_decorator
@@ -21,8 +20,8 @@ class SignUpView(CreateView):
 
     #funcion para sobreescribir un widget en timpo de ejecucion
     #primero se buscan las labels con ctl+u <find> "name"
-    def get_form(selft, form_class=None):
-        form = super(SignUpView, selft).get_form()
+    def get_form(self, form_class=None):
+        form = super(SignUpView, self).get_form()
         #modificar en tiempo real
 
         form.fields['username'].widget = forms.TextInput(attrs={'class':'form-control mb-2', 'placeholder':'Nombre de usuario'})

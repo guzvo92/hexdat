@@ -15,3 +15,4 @@ class ProfileTestCase(TestCase):
 
 #se ejecuta con el manage
 #> python manage.test appmain1registration
+#// para que se ejecute debe estar fuera de la carpeta app

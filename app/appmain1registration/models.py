@@ -34,4 +34,4 @@ def ensure_profile_exist(sender, instance, **kwargs):
     if kwargs.get('created',False): #si existe esta clave
     #entonces se ha creado por primera vez
         Profile.objects.get_or_create(user=instance)
-        print("Se creo usuario y perfil enlazado")
+        print("[SIGNAL]Se creo usuario y perfil enlazado")

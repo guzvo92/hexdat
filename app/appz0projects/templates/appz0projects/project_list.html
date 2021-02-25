@@ -1,0 +1,41 @@
+{% extends '_layout.html' %}
+{% load static %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto mb-5">
+
+        <h3> Mi Sesion: </h3>
+        <p>[Username]: {{request.user.username}}</p>
+        <p>[Email]: {{request.user.email}}</p>
+        <p>[Link]: {{request.user.profile.link}}</p>
+        <p>[Bio]: {{request.user.profile.bio}}</p>
+
+        <h2>Proyectos: </h2>
+        <div class="row">
+
+          {% for project in project_list %}
+
+              <div class="col-md-4 mt-2 mb-3 ">
+                <div class="row p-1">
+                  <div class="col-md-12">
+                    {{project.user_id}}
+                    {{project.title}}
+                    {{project.description}}
+                    {{project.details}}
+                  </div>
+                </div>
+              </div>
+
+          {% endfor %}
+
+        </div> <!--- endrow --->
+      </div>
+    </div>
+  </div>
+
+</main>
+{% endblock %}
