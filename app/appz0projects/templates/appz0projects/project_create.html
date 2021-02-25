@@ -10,6 +10,9 @@
                 <div>
                     <p>[username]: {{request.user.username}}</p>
                     <p>[email]: {{request.user.email}}</p>
+                    <h3> Crea un nuevo Proyecto: </h3>
+                    <div class="e20"></div>
+
                     <form action="" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <table>
